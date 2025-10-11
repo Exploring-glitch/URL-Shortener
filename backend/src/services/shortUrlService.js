@@ -1,4 +1,4 @@
-import { generateNanoid } from "../utils/helper";
+import { generateNanoid } from "../utils/helper.js";
 
 export const createShortUrlService = (url) =>{ //takes url as input and convert it to short url
     const shortUrl = generateNanoid(7); //calling the generateNanoid func written inside utils
