@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config({path: "./.env"});
 import shortUrlRouter from "./src/routes/shortUrlroute.js";
 import { redirectShortUrl } from "./src/controller/redirectController.js";
-
+import { errorHandler } from "./src/utils/errorHandler.js";
 
 
 app.use(express.json());
@@ -15,6 +15,9 @@ app.use(express.urlencoded({extended:true}))
 
 app.use("/api/create", shortUrlRouter);
 app.use("/:id", redirectShortUrl);
+
+
+app.use(errorHandler); //global error handler
 
 
 async function main(){
