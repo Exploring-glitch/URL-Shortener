@@ -1,7 +1,7 @@
 import express from "express";
 import { createShortUrl } from "../controller/shortUrlController.js";
-const Router = express.Router();
-const shortUrlRouter = Router();
+const shortUrlRouter = express.Router();
+
 
 shortUrlRouter.post("/", createShortUrl); //initial home page
 
