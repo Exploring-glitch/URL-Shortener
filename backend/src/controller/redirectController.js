@@ -7,6 +7,6 @@ export const redirectShortUrl = async (req, res) =>{ //REDIRECTING SHORT URL TO 
         const url = await finalRedirect(id);
         res.redirect(url.fullUrl);
     } catch(e){
-        next(e);
+        return res.status(500).json({message: e.message});//sending the error message as json response
     }
 }

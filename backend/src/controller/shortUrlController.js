@@ -7,7 +7,7 @@ export const createShortUrl = async function(req, res){ //CREATING THE SHORT URL
         res.send("Your short url is: " + process.env.APP_URL + ShortUrl);
     }
     catch(e){
-        next(e);
+        return res.status(500).json({message: e.message});//sending the error message as json response  
     }
 }
 
