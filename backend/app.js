@@ -1,6 +1,5 @@
 import express from "express";
 const app = express();
-import {nanoid} from "nanoid"; //a library for generating random unique strings
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config({path: "./.env"});

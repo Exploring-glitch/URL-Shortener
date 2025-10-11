@@ -1,13 +1,9 @@
 import {createShortUrlWithoutUserService} from "../services/shortUrlService.js";
+import wrapAsync from "../utils/tryCatchWrapper.js";
 
-export const createShortUrl = async function(req, res){ //CREATING THE SHORT URL
-    try{
-        const {url} = req.body;
-        const ShortUrl = await createShortUrlWithoutUserService(url);
-        res.send("Your short url is: " + process.env.APP_URL + ShortUrl);
-    }
-    catch(e){
-        return res.status(500).json({message: e.message});//sending the error message as json response  
-    }
-}
+export const createShortUrl = wrapAsync( async (req, res) => { //CREATING THE SHORT URL
+    const {url} = req.body;
+    const ShortUrl = await createShortUrlWithoutUserService(url);
+    res.send("Your short url is: " + process.env.APP_URL + ShortUrl);
+})
 

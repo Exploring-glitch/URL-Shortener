@@ -1,12 +1,9 @@
 import { finalRedirect } from "../dao/redirectDao.js";
+import wrapAsync from "../utils/tryCatchWrapper.js";
 
 
-export const redirectShortUrl = async (req, res) =>{ //REDIRECTING SHORT URL TO FULL URL
-    try{
-        const {id} = req.params;
-        const url = await finalRedirect(id);
-        res.redirect(url.fullUrl);
-    } catch(e){
-        return res.status(500).json({message: e.message});//sending the error message as json response
-    }
-}
+export const redirectShortUrl = wrapAsync( async (req, res) =>{ //REDIRECTING SHORT URL TO FULL URL
+    const {id} = req.params;
+    const url = await finalRedirect(id);
+    res.redirect(url.fullUrl);  
+})
