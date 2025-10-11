@@ -5,27 +5,23 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config({path: "./.env"});
 import shortUrlModel from "./src/models/shortUrlSchema.js";
-
+import shortUrlRouter from "./src/routes/shortUrlroute.js";
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
 
-app.post("/api/create", async function(req, res){
-    const {url} = req.body;
-    const shortUrl = nanoid(7) //generating a random id of length of nanoid is 7
+app.use("/api/create", shortUrlRouter);
 
-    const newUrl = await shortUrlModel.create({
-        fullUrl: url,
-        shortUrl: shortUrl
-    })
-    newUrl.save()
-    res.send("Your short url is: " + shortUrl)
-})
 
-app.get("/api/:shortUrl", async function(req, res){
+app.get("/api/:shortUrl", async function(req, res){ //REDIRECTING SHORT URL TO FULL URL
     const {shortUrl} = req.params;
-    const x = await shortUrlModel.findOne({shortUrl: shortUrl})
+    const url = await shortUrlModel.findOne({shortUrl: shortUrl})
+    if(url){
+        res.redirect(url.fullUrl);
+    } else{
+        res.status(404).send("Url not found");
+    }
 })
 
 
