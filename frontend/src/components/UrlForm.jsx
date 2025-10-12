@@ -4,11 +4,13 @@ import axios from 'axios';
 
 const UrlForm = () => {
   const [url, setUrl] = useState("https://www.google.com")
-  console.log(url);
+  const [shortUrl, setShortUrl] = useState()
+
 
   const submitForm = async()=> {
     console.log("Submitted");
-    const data = await axios.post("/api/create", {url})
+    const {data} = await axios.post("http://localhost:3000/api/create", {url}) //to call the backend api
+    console.log(data);
   }
 
   return (
