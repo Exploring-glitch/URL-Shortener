@@ -2,15 +2,17 @@ import { useState } from 'react'
 import axios from 'axios';
 
 
+
 const UrlForm = () => {
   const [url, setUrl] = useState("https://www.google.com")
   const [shortUrl, setShortUrl] = useState()
 
 
   const submitForm = async()=> {
-    console.log("Submitted");
     const {data} = await axios.post("http://localhost:3000/api/create", {url}) //to call the backend api
     console.log(data);
+    setShortUrl(data);
+    alert("Your short url is: " + data)
   }
 
   return (
@@ -27,10 +29,12 @@ const UrlForm = () => {
 
       <button 
         onClick={submitForm} 
-        className='bg-[#1f64fa] text-[#E0E0E0] p-2 rounded w-45 block mx-auto hover:bg-[#105ee5] hover:transition-colors hover:duration-100'> Click to Shorten
+        className='bg-[#1f64fa] text-[#E0E0E0] p-2 rounded w-45 block mx-auto'> Click to Shorten
       </button>
     </div>
+
   )
 }
+
 
 export default UrlForm
