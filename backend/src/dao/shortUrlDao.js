@@ -1,4 +1,5 @@
 import shortUrlModel from "../models/shortUrlSchema.js";
+import { ConflictError } from "../utils/errorHandler.js";
 
 export const saveShortUrlDao = async (url, shortUrl, userId) => {
     try{
@@ -6,13 +7,18 @@ export const saveShortUrlDao = async (url, shortUrl, userId) => {
             fullUrl: url,
             shortUrl: shortUrl
         })
+
         if(userId){
             newUrl.user = userId;
         }
         await newUrl.save(); //saving the new url to the database
     }
-    catch(e){
-        throw new Error(err);
+    catch(err){
+        if(err.code === 11000){
+            throw new ConflictError(err);
+        }
+        else{
+            throw new Error(err);
+        }
     }
-    
 }
