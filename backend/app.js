@@ -6,7 +6,7 @@ dotenv.config({path: "./.env"});
 import shortUrlRouter from "./src/routes/shortUrlroute.js";
 import { redirectShortUrl } from "./src/controller/redirectController.js";
 import { errorHandler } from "./src/utils/errorHandler.js";
-
+import { connectDb } from "./src/config/mongoConfig.js";
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
@@ -19,14 +19,7 @@ app.use("/:id", redirectShortUrl);
 app.use(errorHandler); //global error handler
 
 
-async function main(){
-    try{
-        await mongoose.connect(process.env.MONGODB_URI)
-        console.log("Connected to mongoose");
-        app.listen(3000)
-    } 
-    catch(e){
-        console.log("Error connecting to mongoose", e.message);
-    }
-}
-main();
+app.listen(3000, () => {
+    connectDb();
+    console.log("Server is running on port 3000");
+})
