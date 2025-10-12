@@ -1,6 +1,5 @@
 import express from "express";
 const app = express();
-import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config({path: "./.env"});
 import shortUrlRouter from "./src/routes/shortUrlroute.js";
