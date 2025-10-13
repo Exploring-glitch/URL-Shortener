@@ -28,19 +28,19 @@ const UrlForm = () => {
 
       <button 
         onClick={submitForm} 
-        className='bg-[#1f64fa] text-[#E0E0E0] p-2 rounded w-45 block mx-auto'> Click to Shorten
+        className='bg-[#1f64fa] text-[#E0E0E0] p-2 rounded w-full'> Click to Shorten
       </button>
 
       
       {shortUrl && (    //This div is shown only if shortUrl is prsent
         <div className="mt-6">
-          <h2 className="text-lg font-semibold mb-2">Your shortened URL:</h2>
+          <h2 className="mb-2 text-[#B0B0B0]">Shortened URL :</h2>
           <div className="flex items-center">
             <input
               type="text"
               readOnly
               value={shortUrl}
-              className="flex-1 p-2 border border-gray-300 rounded-l-md bg-gray-50"
+              className="p-2 w-full border border-[#00BFA5] rounded-md bg-[#1E1E1E] text-[#E0E0E0]"
             />
           </div>
         </div>
