@@ -6,12 +6,22 @@ import axios from 'axios';
 const UrlForm = () => {
   const [url, setUrl] = useState("https://www.google.com")
   const [shortUrl, setShortUrl] = useState()
+  const [copied, setCopied] = useState(false);
 
-
-  const submitForm = async()=> {
+  const handleSubmit = async()=> {
     const {data} = await axios.post("http://localhost:3000/api/create", {url}) //to call the backend api
     console.log(data);
     setShortUrl(data);
+  }
+
+  const handleCopy =() =>{
+    navigator.clipboard.writeText(shortUrl);
+    setCopied(true);
+    
+    // Reset the copied state after 2 seconds
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
   }
 
   return (
@@ -27,21 +37,28 @@ const UrlForm = () => {
       />
 
       <button 
-        onClick={submitForm} 
-        className='bg-[#1f64fa] text-[#E0E0E0] p-2 rounded w-full'> Click to Shorten
+        onClick={handleSubmit} 
+        className='bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded w-full'> Click to Shorten
       </button>
 
       
       {shortUrl && (    //This div is shown only if shortUrl is prsent
         <div className="mt-6">
           <h2 className="mb-2 text-[#B0B0B0]">Shortened URL :</h2>
-          <div className="flex items-center">
+
+          <div className="flex gap-2">
             <input
               type="text"
               readOnly
               value={shortUrl}
-              className="p-2 w-full border border-[#00BFA5] rounded-md bg-[#1E1E1E] text-[#E0E0E0]"
+              className="flex-1 p-2 border border-[#00BFA5] rounded bg-[#1E1E1E] text-[#E0E0E0]"
             />
+
+            <button 
+              onClick={handleCopy} 
+              className={`p-2 rounded ${copied ? 'bg-green-600' : 'bg-[#2467f8] hover:bg-[#175ad6]'}`
+              }> {copied ? 'Yay! Copied' : 'Copy'}
+            </button>
           </div>
         </div>
       )}
