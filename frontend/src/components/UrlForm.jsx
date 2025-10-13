@@ -12,7 +12,6 @@ const UrlForm = () => {
     const {data} = await axios.post("http://localhost:3000/api/create", {url}) //to call the backend api
     console.log(data);
     setShortUrl(data);
-    alert("Your short url is: " + data)
   }
 
   return (
@@ -31,8 +30,22 @@ const UrlForm = () => {
         onClick={submitForm} 
         className='bg-[#1f64fa] text-[#E0E0E0] p-2 rounded w-45 block mx-auto'> Click to Shorten
       </button>
-    </div>
 
+      
+      {shortUrl && (    //This div is shown only if shortUrl is prsent
+        <div className="mt-6">
+          <h2 className="text-lg font-semibold mb-2">Your shortened URL:</h2>
+          <div className="flex items-center">
+            <input
+              type="text"
+              readOnly
+              value={shortUrl}
+              className="flex-1 p-2 border border-gray-300 rounded-l-md bg-gray-50"
+            />
+          </div>
+        </div>
+      )}
+    </div>
   )
 }
 
