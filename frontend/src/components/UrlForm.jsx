@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import axios from 'axios';
+import { getShortUrlFromBackend } from '../api/shortUrlApi.js';
 
 
 
@@ -12,9 +13,8 @@ const UrlForm = () => {
 
   const handleSubmit = async()=> {
     inputRef.current.focus(); // Focus the input field when the button is clicked without an input
-    const {data} = await axios.post("http://localhost:3000/api/create", {url}) //to call the backend api
-    console.log(data);
-    setShortUrl(data);
+    const x = await getShortUrlFromBackend(url) //to call the backend api
+    setShortUrl(x);;
   }
 
   const handleCopy =() =>{
