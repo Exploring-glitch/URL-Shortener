@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import axios from 'axios';
 
 
 
 const UrlForm = () => {
-  const [url, setUrl] = useState("https://www.google.com")
+  const [url, setUrl] = useState("")
   const [shortUrl, setShortUrl] = useState()
   const [copied, setCopied] = useState(false);
 
+  const inputRef = useRef(null);
+
   const handleSubmit = async()=> {
+    inputRef.current.focus(); // Focus the input field when the button is clicked without an input
     const {data} = await axios.post("http://localhost:3000/api/create", {url}) //to call the backend api
     console.log(data);
     setShortUrl(data);
@@ -21,7 +24,7 @@ const UrlForm = () => {
     // Reset the copied state after 2 seconds
     setTimeout(() => {
       setCopied(false);
-    }, 2000);
+    }, 1000);
   }
 
   return (
@@ -29,6 +32,7 @@ const UrlForm = () => {
       <h2 className='text-[#B0B0B0]'>Enter the original URL :</h2>
 
       <input 
+      ref={inputRef}
         value={url}
         onInput={(c)=>{setUrl(c.target.value)}} //changes the value of url to what user types
         type = "url" 
