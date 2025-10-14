@@ -7,13 +7,17 @@ import { redirectShortUrl } from "./src/controller/redirectController.js";
 import { errorHandler } from "./src/utils/errorHandler.js";
 import { connectDb } from "./src/config/mongoConfig.js";
 import cors from "cors"; 
+import authRouter from "./src/routes/authRoute.js";
+
 
 app.use(cors()); //cross origin resource sharing (allows requests from frontend to backend)
+
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 
 
+app.use("/api/auth", authRouter);
 app.use("/api/create", shortUrlRouter);
 app.use("/:id", redirectShortUrl);
 
