@@ -2,14 +2,25 @@ import { createNewUser, findUserByEmail } from "../dao/userDao.js"
 import { ConflictError } from "../utils/errorHandler.js";
 import { signToken } from '../utils/helper.js';
 
-export const userSignService = async (name, email, password) =>{
-    const user = await findUserByEmail({email});
+export const userSignupService = async (name, email, password) =>{
+    const user = await findUserByEmail(email);
     if(user){
         throw new ConflictError("User already exists");
     }
 
     const newUser = await createNewUser(name, email, password);
-    const token = await signToken({id : newUser._id})
+    const token = signToken({id : newUser._id})
 
     return token; 
+}
+
+
+export const  userLoginService = async (email, password) =>{
+    const user = await findUserByEmail(email);
+    if( !user || user.password !== password ) {
+        throw new Error ("Incorect credentials");
+    }
+
+    const token = signToken({id : user._id})
+    return token;
 }
