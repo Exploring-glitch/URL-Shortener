@@ -1,3 +1,4 @@
+import jsonwebtoken from jsonwebtoken;
 import { createNewUser, findUserByEmail } from "../dao/userDao.js"
 import { ConflictError } from "../utils/errorHandler.js";
 
@@ -8,5 +9,8 @@ export const userSignService = async (name, email, password) =>{
     }
 
     const newUser = await createNewUser(name, email, password);
+
+    const token = jsonwebtoken.sign()
+
     return newUser; 
 }
