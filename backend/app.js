@@ -11,7 +11,12 @@ import shortUrlRouter from "./src/routes/shortUrlRoute.js";
 import { attachUser } from "./src/utils/attachUser.js";
 import cookieParser from "cookie-parser";
 
-app.use(cors()); //cross origin resource sharing (allows requests from frontend to backend)
+
+//cross origin resource sharing (allows requests from frontend to backend)
+app.use(cors({
+    origin: 'http://localhost:5173', 
+    credentials: true //allows cookies to be sent
+}));
 
 
 app.use(express.json());

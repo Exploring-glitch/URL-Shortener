@@ -17,7 +17,7 @@ export const userSignupService = async (name, email, password) =>{
 export const  userLoginService = async (email, password) =>{
     const user = await findUserByEmail(email);
     if( !user || user.password !== password ) {
-        throw new Error ("Incorect credentials");
+        throw new Error ("Incorrect credentials");
     }
 
     const token = signToken({id : user._id})
