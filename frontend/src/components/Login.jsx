@@ -26,7 +26,7 @@ const LoginUser = ({state}) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-center mb-6">Signin</h2>
+      <h2 className="text-2xl font-bold text-center mb-6">Sign In</h2>
 
       {error && (
         <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
@@ -66,7 +66,7 @@ const LoginUser = ({state}) => {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="bg-[#2979FF] hover:bg-[#1E63E6] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+          className="bg-[#2979FF] hover:bg-[#1E63E6] text-white transition-colors duration-200 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </button>
@@ -74,7 +74,7 @@ const LoginUser = ({state}) => {
 
       <div className="text-center mt-4">
         <p className="cursor-pointer text-sm text-gray-600">
-          Don't have an account? <span onClick={() => state(true)} className="text-[#2979FF] hover:text-[#2168ec]"><u>Sign Up</u></span>
+          Don't have an account? <span onClick={() => state(false)} className="text-[#2979FF] hover:text-[#2168ec]"><u>Sign Up</u></span>
         </p>
       </div>
     </div>

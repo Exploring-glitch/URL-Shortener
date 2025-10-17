@@ -1,12 +1,10 @@
-import React from 'react'
-import HomePage from './pages/HomePage'
-import SignupUser from './components/Signup'
-import UserAuthPage from './pages/AuthPage'
 import { Outlet } from '@tanstack/react-router'
+import { NavBar } from './components/NavBar'
 
 export const App = () => {
   return (
     <>
+      <NavBar />
       <Outlet />
     </>
   )

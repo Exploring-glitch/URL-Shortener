@@ -42,7 +42,7 @@ const UrlForm = () => {
 
       <button 
         onClick={handleSubmit} 
-        className='bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded w-full'> Click to Shorten
+        className='bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded w-full transition-colors duration-200'> Click to Shorten
       </button>
 
       
@@ -60,7 +60,7 @@ const UrlForm = () => {
 
             <button 
               onClick={handleCopy} 
-              className={`p-2 rounded ${copied ? 'bg-green-600' : 'bg-[#2467f8] hover:bg-[#175ad6]'}`
+              className={`p-2 rounded transition-colors duration-200 ${copied ? 'bg-green-600' : 'bg-[#2467f8] hover:bg-[#175ad6]'}`
               }> {copied ? 'Yay! Copied' : 'Copy'}
             </button>
           </div>

@@ -81,7 +81,7 @@ const SignupUser = ({state}) => {
             <button
                 onClick={handleSubmit}
                 disabled={loading}
-                className="bg-[#2979FF] hover:bg-[#1E63E6] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                className="bg-[#2979FF] hover:bg-[#1E63E6] text-white transition-colors duration-200  font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
             >
             {loading ? 'Creating...' : 'Create Account'}
             </button>
@@ -89,7 +89,7 @@ const SignupUser = ({state}) => {
         
         <div className="text-center mt-4">
             <p className="cursor-pointer text-sm text-gray-600">
-                Already have an account? <span onClick={() => state(false)} className="text-[#2979FF] hover:text-[#2168ec]"><u>Sign In</u></span>
+                Already have an account? <span onClick={() => state(true)} className="text-[#2979FF] hover:text-[#2168ec]"><u>Sign In</u></span>
             </p>
         </div>
     </div>
