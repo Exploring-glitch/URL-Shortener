@@ -10,8 +10,7 @@ export const userSignupService = async (name, email, password) =>{
 
     const newUser = await createNewUser(name, email, password);
     const token = signToken({id : newUser._id})
-
-    return token; 
+    return {token, newUser}; 
 }
 
 
@@ -22,5 +21,5 @@ export const  userLoginService = async (email, password) =>{
     }
 
     const token = signToken({id : user._id})
-    return token;
+    return {token, user};
 }

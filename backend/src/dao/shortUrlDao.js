@@ -7,7 +7,6 @@ export const saveShortUrlDao = async (url, shortUrl, userId) => {
             fullUrl: url,
             shortUrl: shortUrl
         })
-
         if(userId){
             newUrl.user = userId;
         }
@@ -21,4 +20,10 @@ export const saveShortUrlDao = async (url, shortUrl, userId) => {
             throw new Error(err);
         }
     }
+}
+
+
+//checks if there is a custom Short URL in the database or not 
+export const checkCustomUrlDao = async(slug) =>{
+    return await shortUrlModel.findOne({shortUrl: slug}) 
 }
