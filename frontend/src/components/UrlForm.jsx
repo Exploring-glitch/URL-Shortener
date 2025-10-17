@@ -32,7 +32,7 @@ const UrlForm = () => {
       <h2 className='text-[#B0B0B0]'>Enter the original URL :</h2>
 
       <input 
-      ref={inputRef}
+        ref={inputRef}
         value={url}
         onInput={(c)=>{setUrl(c.target.value)}} //changes the value of url to what user types
         type = "url" 
