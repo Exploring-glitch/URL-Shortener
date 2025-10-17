@@ -1,6 +1,7 @@
 import { checkCustomUrlDao, saveShortUrlDao } from "../dao/shortUrlDao.js";
 import { generateNanoid } from "../utils/helper.js";
 
+
 export const createShortUrlWithoutUserService = async (url) =>{ //takes url as input and convert it to short url
     const shortUrl = generateNanoid(7); //calling the generateNanoid func written inside utils
     if(!shortUrl) throw new Error("Short URL not generated")
@@ -10,7 +11,7 @@ export const createShortUrlWithoutUserService = async (url) =>{ //takes url as i
 }
 
 export const createShortUrlWithUserService = async (url, userId, slug = null) =>{ 
-    const shortUrl = slug || generateNanoid(7); 
+    const shortUrl = slug || generateNanoid(7); //if slug exists then slug or else call the  generateNanoid func
     if(!shortUrl) throw new Error("Short URL not generated") 
     
     const exists = await checkCustomUrlDao(slug)

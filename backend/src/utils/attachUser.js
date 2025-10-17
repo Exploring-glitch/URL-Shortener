@@ -7,8 +7,9 @@ export const attachUser = async (req, res, next) => {
     if(!token) return next()
 
     try {
-        const decoded = verifyToken(token)
-        const user = await findUserById(decoded)
+        const decodedId = verifyToken(token)
+        const user = await findUserById(decodedId)
+        
         if(!user) return next()
         req.user = user
         next()
