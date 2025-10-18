@@ -1,9 +1,8 @@
 import { useState, useRef } from 'react'
-import axios from 'axios';
 import { getShortUrlFromBackend } from '../api/shortUrlApi.js';
 import { useSelector } from 'react-redux';
-
-
+import { QueryClient } from '@tanstack/react-query';
+import { queryClient } from "../main.jsx"
 
 const UrlForm = () => {
   const [url, setUrl] = useState("");
@@ -21,7 +20,11 @@ const UrlForm = () => {
     inputRef.current.focus(); // Focus the input field when the button is clicked without an input
     try{
       const resultShortUrl = await getShortUrlFromBackend(url, customSlug) //to call the backend api
-      setShortUrl(resultShortUrl);;
+      setShortUrl(resultShortUrl);
+
+      queryClient.invalidateQueries({queryKey: ['userUrls']})
+      setError(null);
+
     } catch(e){
       setError(e.message)
     }

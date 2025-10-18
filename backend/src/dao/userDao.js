@@ -25,6 +25,6 @@ export const findUserById = async (id) => {
     return await User.findById(id)
 }
 
-export const getUserUrlsDao = async (is) => {
+export const getUserUrlsDao = async (id) => {
     return await shortUrlModel.find({user : id});
 }

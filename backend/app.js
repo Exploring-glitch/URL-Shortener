@@ -26,10 +26,11 @@ app.use(cookieParser())
 
 app.use(attachUser)
 
+app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter);
 app.use("/api/create", shortUrlRouter);
 app.use("/:id", redirectShortUrl);
-app.use("/api/user", userRouter)
+
 
 app.use(errorHandler); //global error handler
 
