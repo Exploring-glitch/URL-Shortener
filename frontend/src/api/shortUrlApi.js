@@ -1,6 +1,9 @@
 import { axiosInstance } from "../utils/axiosInstance.js";
 
-export const getShortUrlFromBackend = async (url) => {
-    const {data} = await axiosInstance.post("api/create", {url})
+export const getShortUrlFromBackend = async (url, slug) => {
+    console.log(url)
+    console.log("slug " + slug)
+    const {data} = await axiosInstance.post("api/create", {url, slug})
+    console.log(data.result)
     return data.result; //.result because in controller we wrote result as key in json 
 }
