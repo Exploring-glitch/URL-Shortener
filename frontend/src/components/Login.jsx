@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { login_User } from '../api/userApi';
-import {useSelector} from 'react-redux'; //redux
+import {useDispatch, useSelector} from 'react-redux'; //redux
+import { login } from '../store/slice/authSlice';
+import { useNavigate } from '@tanstack/react-router';
 
 
 const LoginUser = ({state}) => {
@@ -9,9 +11,12 @@ const LoginUser = ({state}) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const auth = useSelector((state) => state.auth) //redux
-  
+  const navigate = useNavigate(); //tanstack
+  const dispatch = useDispatch(); //redux
+  const auth = useSelector((state) => state.auth) 
+  console.log(auth);
 
+  
 
   const handleSubmit = async () => {
     setLoading(true);
@@ -19,7 +24,9 @@ const LoginUser = ({state}) => {
 
     try {
       const data = await login_User(email, password);
-      console.log(data);
+
+      dispatch(login(data.user))
+      navigate({to : "/dashboard"}) //this means, when user login, go to the dashboard page
 
       setLoading(false);
       console.log("signin success")

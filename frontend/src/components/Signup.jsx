@@ -1,5 +1,9 @@
 import React, { useState } from 'react'
 import { signup_User } from '../api/userApi';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from '@tanstack/react-router';
+import { login } from '../store/slice/authSlice';
+
 
 const SignupUser = ({state}) => {
     const [name, setName] = useState("");
@@ -8,14 +12,26 @@ const SignupUser = ({state}) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
 
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
 
     const handleSubmit = async() =>{
+        if (password.length < 6) {
+            setError('Password must be at least 6 characters long');
+            return;
+        }
+
         setLoading(true);
         setError('');
 
         try{
-            await signup_User(name, email, password);
+            const data = await signup_User(name, email, password);
             setLoading(false)
+
+            dispatch(login(data.user)); //this means after signing up, dispatch saves data of user in the login store and user dont have to login after signing up
+            navigate({to : "/dashboard"}) //directly user gets navigates to dashboard after signing up
+
         }catch(e){
             setLoading(false)
             setError(e.message || 'Signup failed. Please try again.');           
