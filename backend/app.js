@@ -8,6 +8,7 @@ import { connectDb } from "./src/config/mongoConfig.js";
 import cors from "cors"; 
 import authRouter from "./src/routes/authRoute.js";
 import shortUrlRouter from "./src/routes/shortUrlRoute.js";
+import userRouter from "./src/routes/userRoute.js"
 import { attachUser } from "./src/utils/attachUser.js";
 import cookieParser from "cookie-parser";
 
@@ -28,7 +29,7 @@ app.use(attachUser)
 app.use("/api/auth", authRouter);
 app.use("/api/create", shortUrlRouter);
 app.use("/:id", redirectShortUrl);
-
+app.use("/api/user", userRouter)
 
 app.use(errorHandler); //global error handler
 

@@ -1,3 +1,4 @@
+import shortUrlModel from "../models/shortUrlSchema.js";
 import User from "../models/userSchema.js";
 
 
@@ -22,4 +23,8 @@ export const findUserByEmailAndPassword = async (email, password) => {
 
 export const findUserById = async (id) => {
     return await User.findById(id)
+}
+
+export const getUserUrlsDao = async (is) => {
+    return await shortUrlModel.find({user : id});
 }

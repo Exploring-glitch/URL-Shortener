@@ -20,3 +20,8 @@ export const Current_User = async () => {
     const {data} = await axiosInstance.get("api/auth/me")
     return data;
 }
+
+export const GetAllUrls_User = async() => {
+    const {data} = await axiosInstance.get("api/user/urls");
+    return data
+}
