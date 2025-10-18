@@ -8,9 +8,8 @@ export const userSignup = wrapAsync( async(req, res) => {
 
     res.user = user
     res.cookie("token", token, cookieOptions) 
-    res.status(200).json({"message" : "sign up successful"})
+    res.status(200).json({"message" : "Sign Up success"})
 })
-
 
 export const userLogin = wrapAsync( async(req, res) => {
     const {email, password} = req.body;
@@ -19,9 +18,14 @@ export const userLogin = wrapAsync( async(req, res) => {
     req.user = user
    
     res.cookie("token", token, cookieOptions) 
-    res.status(200).json({"message" : "Login successful", "user" : user})
+    res.status(200).json({"message" : "Login success", "user" : user})
 })
 
 export const userLogout = wrapAsync( async(req, res) => {
+    res.clearCookie("token", cookieOptions)
+    res.status(200).json({"message" : "Logout success"})
+})
 
+export const getCurrentUser = wrapAsync(async(req, res) => {
+    res.status(200).json({"user" : req.user})
 })
