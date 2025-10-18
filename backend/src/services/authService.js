@@ -1,4 +1,4 @@
-import { createNewUser, findUserByEmail } from "../dao/userDao.js"
+import { createNewUser, findUserByEmail, findUserByEmailAndPassword } from "../dao/userDao.js"
 import { ConflictError } from "../utils/errorHandler.js";
 import { signToken } from '../utils/helper.js';
 
@@ -15,8 +15,13 @@ export const userSignupService = async (name, email, password) =>{
 
 
 export const  userLoginService = async (email, password) =>{
-    const user = await findUserByEmail(email);
-    if( !user || user.password !== password ) {
+    const user = await findUserByEmailAndPassword(email, password);
+    if(!user) {
+        throw new Error ("Incorrect credentials");
+    }
+
+    const isPasswordValid = await user.comparePassword(password);
+    if(!isPasswordValid) {
         throw new Error ("Incorrect credentials");
     }
 

@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
 import { login_User } from '../api/userApi';
+import {useSelector} from 'react-redux'; //redux
+
 
 const LoginUser = ({state}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+
+  const auth = useSelector((state) => state.auth) //redux
+  
 
 
   const handleSubmit = async () => {
@@ -14,6 +19,8 @@ const LoginUser = ({state}) => {
 
     try {
       const data = await login_User(email, password);
+      console.log(data);
+
       setLoading(false);
       console.log("signin success")
     } catch (e) {
@@ -29,7 +36,7 @@ const LoginUser = ({state}) => {
       <h2 className="text-2xl font-bold text-center mb-6">Sign In</h2>
 
       {error && (
-        <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-md">
+        <div className="mb-4 p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
             {error}
         </div>
       )}

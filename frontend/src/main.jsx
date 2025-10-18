@@ -6,6 +6,7 @@ const queryClient = new QueryClient()
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routing/routeTree.js'
 import store from './store/store.js' //redux
+import { Provider } from 'react-redux'
 
 const router = createRouter({routeTree})
 
