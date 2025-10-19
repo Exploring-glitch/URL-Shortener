@@ -43,7 +43,7 @@ const UrlForm = () => {
   return (
     <div>
       {error && (
-        <div className="mb-4 p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
+        <div className="mb-4 p-2 sm:p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
           {error}
         </div>
       )}
@@ -60,7 +60,7 @@ const UrlForm = () => {
           onInput={(c) => { setUrl(c.target.value) }} //changes the value of url to what user types
           type="url"
           placeholder='for example: https://example.com'
-          className='w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
+          className='w-full sm:w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
         />
       </div>
 
@@ -76,7 +76,7 @@ const UrlForm = () => {
               value={customSlug}
               onChange={(c) => setCustomSlug(c.target.value)}
               placeholder="enter your custom slug"
-              className='w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
+              className='w-full sm:w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ const UrlForm = () => {
 
       <button
         onClick={handleSubmit}
-        className=' mt-2 bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded w-100 transition-colors duration-200'> Click to Shorten
+        className='w-full sm:w-100 mt-2 bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded transition-colors duration-200'> Click to Shorten
       </button>
 
       {shortUrl && (    //This div is shown only if shortUrl is prsent
@@ -96,19 +96,18 @@ const UrlForm = () => {
               type="text"
               readOnly
               value={shortUrl}
-              className="flex-1 p-2 border border-[#00BFA5] rounded bg-[#1E1E1E] text-[#E0E0E0]"
+              className="flex-1 p-1 sm:p-2 border border-[#00BFA5] rounded bg-[#1E1E1E] text-[#E0E0E0]"
             />
 
             <button
               onClick={handleCopy}
-              className={`p-2 rounded transition-colors duration-200 ${copied ? 'bg-green-600' : 'bg-[#2467f8] hover:bg-[#175ad6]'}`
+              className={`p-1 sm:p-2 rounded transition-colors duration-200 ${copied ? 'bg-green-600' : 'bg-[#2467f8] hover:bg-[#175ad6]'}`
               }> {copied ? 'Yay! Copied' : 'Copy'}
             </button>
           </div>
         </div>
       )}
     </div>
-
   )
 }
 
