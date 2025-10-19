@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react'
 import { getShortUrlFromBackend } from '../api/shortUrlApi.js';
 import { useSelector } from 'react-redux';
-import { QueryClient } from '@tanstack/react-query';
 import { queryClient } from "../main.jsx"
 
 const UrlForm = () => {

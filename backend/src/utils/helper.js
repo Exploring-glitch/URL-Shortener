@@ -7,7 +7,7 @@ export function generateNanoid (length){ ////generating a random id of length of
 }
 
 export const signToken = (payload) => { //generate the token
-    return jsonwebtoken.sign(payload, process.env.JWT_SECRET, {expiresIn: "5m"}); 
+    return jsonwebtoken.sign(payload, process.env.JWT_SECRET, {expiresIn: "1h"}); 
 }
 
 export const verifyToken = (token) => { //verify the token

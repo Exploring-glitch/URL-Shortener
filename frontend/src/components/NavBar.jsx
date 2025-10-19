@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout_User } from '../api/userApi';
 import { logout } from '../store/slice/authSlice';
@@ -22,8 +21,8 @@ export const NavBar = () => {
 
             dispatch(logout());
             navigate({ to: "/" });
-        } 
-        catch(e){
+        }
+        catch (e) {
             console.log(e.message);
         }
     }
