@@ -27,11 +27,17 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - **Database:** MongoDB  
 - **Authentication:** JWT  
 
+
+## Here's how my URL Shortener looks like :
+
+# Home Page-
 ![Homepage](./images/homepage1.png)
 ![Homepage](./images/homepage2.png)
 
+# Authentication Page-
 ![Signuppage](./images/signup.png)
 ![Signinpage](./images/signin.png)
 
+# Dashboard-
 ![Dashboardpage](./images/dashboard1.png)
 ![Dashboardpage](./images/dashboard2.png)
