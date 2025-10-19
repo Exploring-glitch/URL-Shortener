@@ -6,7 +6,7 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 
 
 
-## 🚀 Features
+## Features :
 
 ### Basic Features (Available to all users)
 - Shorten long URLs instantly  
@@ -21,23 +21,24 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - Login/Signup system for personalized experience 
 
 
-## 🛠️ Tech Stack
+##  Tech Stack :
+
 - **Frontend:** React, Tailwind CSS  
 - **Backend:** Node.js, Express  
 - **Database:** MongoDB  
 - **Authentication:** JWT  
 
 
-## Here's how my URL Shortener looks like :
+# Here's how my URL Shortener looks like :
 
-# Home Page-
+### Home Page-
 ![Homepage](./images/homepage1.png)
 ![Homepage](./images/homepage2.png)
 
-# Authentication Page-
+### Authentication Page-
 ![Signuppage](./images/signup.png)
 ![Signinpage](./images/signin.png)
 
-# Dashboard-
+### Dashboard-
 ![Dashboardpage](./images/dashboard1.png)
 ![Dashboardpage](./images/dashboard2.png)
