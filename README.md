@@ -21,7 +21,7 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - Login/Signup system for personalized experience 
 
 
-##  Tech Stack :
+> ##  Tech Stack :
 
 - **Frontend:** React, Tailwind CSS  
 - **Backend:** Node.js, Express  
@@ -29,7 +29,7 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - **Authentication:** JWT  
 
 
-# Here's how my URL Shortener looks like :
+> ## Here's how my URL Shortener looks like :
 
 ### Home Page-
 ![Homepage](./images/homepage1.png)
