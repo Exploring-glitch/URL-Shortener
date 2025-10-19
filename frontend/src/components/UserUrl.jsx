@@ -55,33 +55,96 @@ const UserUrl = () => {
 
 
     return (
-        <div className="bg-[#1E1E1E] rounded-lg mt-5 shadow-md overflow-hidden border border-[#2C2C2C]">
-            <div className="overflow-x-auto h-56">
-                <table className="min-w-full divide-y divide-[#2C2C2C]">
-                    <thead className="bg-[#2A2A2A]">
-                        <tr>
-                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
-                                Original URL
-                            </th>
-                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
-                                Short URL
-                            </th>
-                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
-                                Clicks
-                            </th>
-                            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
-                                Actions
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody className="divide-y divide-[#2C2C2C] bg-[#1E1E1E] text-[#E0E0E0]">
-                        {urls.urls.reverse().map((url) => (
-                            <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
-                                <td className="px-6 py-4">
-                                    <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <div className="text-sm">
+        <div className="p-2 mt-5">
+            {/* 📱 MOBILE CARD VIEW (visible below lg) */}
+            <div className="space-y-4 block lg:hidden">
+                <h2 className="text-[#E0E0E0] text-lg font-semibold mt-8 mb-4 text-center lg:text-left">
+                    Your generated URLs:
+                </h2>
+                
+                {urls.urls.reverse().map((url) => (
+
+                    <div key={url._id} className="bg-[#1E1E1E] rounded-lg shadow-md border border-[#2C2C2C] p-4 space-y-2">
+
+                        <div>
+                            <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
+                                Original URL:
+                            </span>
+                            <div className="text-sm text-[#E0E0E0] truncate">{url.fullUrl}</div>
+                        </div>
+
+                        <div>
+                            <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
+                                Short URL:
+                            </span>
+                            <div>
+                                <a
+                                    href={`http://localhost:3000/${url.shortUrl}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#2979FF] hover:text-[#82B1FF] hover:underline text-sm break-all"
+                                >
+                                    {`localhost:3000/${url.shortUrl}`}
+                                </a>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
+                                Clicks:
+                            </span>
+                            <span className="px-2 ml-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
+                                {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
+                            </span>
+                        </div>
+
+                        <div>
+                            <button
+                                onClick={() =>
+                                    handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)
+                                }
+                                className={`mt-2 w-full inline-flex justify-center items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${copiedId === url._id
+                                    ? "bg-green-600 hover:bg-green-700"
+                                    : "bg-[#2979FF] hover:bg-[#1565C0]"
+                                    } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2979FF] transition-colors duration-200`}
+                            >
+                                {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
+                            </button>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            {/* 💻 TABLE VIEW (visible from md and up) */}
+            <div className="hidden lg:block bg-[#1E1E1E] rounded-lg mt-5 shadow-lg overflow-hidden border border-[#2C2C2C]">
+                <div className="overflow-x-auto h-56">
+                    <table className="min-w-full divide-y divide-[#2C2C2C]">
+                        <thead className="bg-[#2A2A2A]">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                    Original URL
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                    Short URL
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                    Clicks
+                                </th>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                    Actions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody className="divide-y divide-[#2C2C2C] bg-[#1E1E1E] text-[#E0E0E0]">
+                            {urls.urls.reverse().map((url) => (
+                                <tr
+                                    key={url._id}
+                                    className="hover:bg-[#2A2A2A] transition-colors duration-150"
+                                >
+                                    <td className="px-6 py-4">
+                                        <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
+                                    </td>
+                                    <td className="px-6 py-4">
                                         <a
                                             href={`http://localhost:3000/${url.shortUrl}`}
                                             target="_blank"
@@ -90,40 +153,36 @@ const UserUrl = () => {
                                         >
                                             {`localhost:3000/${url.shortUrl}`}
                                         </a>
-                                    </div>
-                                </td>
-                                <td className="px-6 py-4">
-                                    <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
-                                        {url.clicks} {url.clicks === 1 ? 'click' : 'clicks'}
-                                    </span>
-                                </td>
-                                <td className="px-6 py-4 text-sm font-medium">
-                                    <button
-                                        onClick={() => handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)}
-                                        className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm ${copiedId === url._id
-                                            ? 'bg-green-600 hover:bg-green-700'
-                                            : 'bg-[#2979FF] hover:bg-[#1565C0]'
-                                            } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2979FF] transition-colors duration-200`}
-                                    >
-                                        {copiedId === url._id ? (
-                                            <>
-                                                ✅ Copied!
-                                            </>
-                                        ) : (
-                                            <>
-                                                📋 Copy URL
-                                            </>
-                                        )}
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
+                                            {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
+                                        </span>
+                                    </td>
+                                    <td className="px-6 py-4 text-sm font-medium">
+                                        <button
+                                            onClick={() =>
+                                                handleCopy(
+                                                    `http://localhost:3000/${url.shortUrl}`,
+                                                    url._id
+                                                )
+                                            }
+                                            className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm ${copiedId === url._id
+                                                ? "bg-green-600 hover:bg-green-700"
+                                                : "bg-[#2979FF] hover:bg-[#1565C0]"
+                                                } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2979FF] transition-colors duration-200`}
+                                        >
+                                            {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
+                                        </button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
-
 }
 
 export default UserUrl
