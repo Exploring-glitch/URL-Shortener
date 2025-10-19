@@ -26,3 +26,6 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - **Backend:** Node.js, Express  
 - **Database:** MongoDB  
 - **Authentication:** JWT  
+
+![Homepage](./images/homepage.png)
+
