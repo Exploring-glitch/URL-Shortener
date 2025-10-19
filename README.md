@@ -26,8 +26,3 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - **Backend:** Node.js, Express  
 - **Database:** MongoDB  
 - **Authentication:** JWT  
-
-## ⚙️ Installation
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/your-username/url-shortener.git
