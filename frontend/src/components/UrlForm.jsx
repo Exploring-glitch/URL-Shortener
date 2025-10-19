@@ -18,14 +18,14 @@ const UrlForm = () => {
   const handleSubmit = async () => {
     setError('');
     inputRef.current.focus(); // Focus the input field when the button is clicked without an input
-    try{
+    try {
       const resultShortUrl = await getShortUrlFromBackend(url, customSlug) //to call the backend api
       setShortUrl(resultShortUrl);
 
-      queryClient.invalidateQueries({queryKey: ['userUrls']})
+      queryClient.invalidateQueries({ queryKey: ['userUrls'] })
       setError(null);
 
-    } catch(e){
+    } catch (e) {
       setError(e.message)
     }
   }
@@ -44,7 +44,7 @@ const UrlForm = () => {
     <div>
       {error && (
         <div className="mb-4 p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
-            {error}
+          {error}
         </div>
       )}
 
@@ -52,36 +52,40 @@ const UrlForm = () => {
         htmlFor='originalUrl'
         className='text-[#B0B0B0]'>Enter the original URL :
       </label>
-      <input
-        id='originalUrl'
-        ref={inputRef}
-        value={url}
-        onInput={(c) => { setUrl(c.target.value) }} //changes the value of url to what user types
-        type="url"
-        placeholder='for example: https://example.com'
-        className='w-full p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
-      />
+      <div>
+        <input
+          id='originalUrl'
+          ref={inputRef}
+          value={url}
+          onInput={(c) => { setUrl(c.target.value) }} //changes the value of url to what user types
+          type="url"
+          placeholder='for example: https://example.com'
+          className='w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
+        />
+      </div>
+
+      {isAuthenticated && (
+        <div>
+          <label htmlFor="customSlug" className="text-[#B0B0B0] mb-1">
+            Custom URL (optional) :
+          </label>
+          <div>
+            <input
+              type="text"
+              id="customSlug"
+              value={customSlug}
+              onChange={(c) => setCustomSlug(c.target.value)}
+              placeholder="enter your custom slug"
+              className='w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
+            />
+          </div>
+        </div>
+      )}
 
       <button
         onClick={handleSubmit}
-        className='bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded w-full transition-colors duration-200'> Click to Shorten
+        className=' mt-2 bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded w-100 transition-colors duration-200'> Click to Shorten
       </button>
-
-      {isAuthenticated && (
-        <div className="mt-4">
-          <label htmlFor="customSlug" className="text-[#B0B0B0] mb-1">
-            Custom URL (optional)
-          </label>
-          <input
-            type="text"
-            id="customSlug"
-            value={customSlug}
-            onChange={(c) => setCustomSlug(c.target.value)}
-            placeholder="enter your custom slug"
-            className='w-full p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
-          />
-        </div>
-      )}
 
       {shortUrl && (    //This div is shown only if shortUrl is prsent
         <div className="mt-6">
