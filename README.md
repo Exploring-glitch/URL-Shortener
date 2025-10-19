@@ -8,13 +8,13 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 
 ## Features :
 
-### Basic Features (Available to all users)
+#### Basic Features (Available to all users)
 - Shorten long URLs instantly  
 - **Free access** — no payment required  
 - **Copy shortened URL** directly with one click   
 - Responsive UI using Tailwind CSS  
 
-### Log in to access more advanced features
+#### Log in to access more advanced features
 - **View previously generated URLs**  
 - **Customize the name** of your short URL  
 - **Track the number of clicks** on each link  
