@@ -30,3 +30,8 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 ![Homepage](./images/homepage1.png)
 ![Homepage](./images/homepage2.png)
 
+![Signuppage](./images/signup.png)
+![Signinpage](./images/signin.png)
+
+![Dashboardpage](./images/dashboard1.png)
+![Dashboardpage](./images/dashboard2.png)
