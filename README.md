@@ -6,7 +6,7 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 
 
 
-&nbsp; ## Features :
+> ## Features :
 
 #### Basic Features (Available to all users)
 - Shorten long URLs instantly  
