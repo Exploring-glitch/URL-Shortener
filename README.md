@@ -18,6 +18,7 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 - **View previously generated URLs**  
 - **Customize the name** of your short URL  
 - **Track the number of clicks** on each link  
+- **Delete URL**   
 - Login/Signup system for personalized experience 
 
 
@@ -42,3 +43,6 @@ A simple and responsive **URL Shortener App** built using **MERN Stack (MongoDB,
 ### Dashboard-
 ![Dashboardpage](./images/dashboard1.png)
 ![Dashboardpage](./images/dashboard2.png)
+
+### Customize your URLs-
+![Dashboardpage](./images/dashboard3.png)
