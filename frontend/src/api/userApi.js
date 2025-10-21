@@ -27,3 +27,10 @@ export const GetAllUrls_User = async() => {
     console.log(data)
     return data
 }
+
+export const DeleteUser_Url = async() => {
+    console("Inside api")
+    const {data}  = await axiosInstance.delete("api/user/urls/id")
+    console.log(data)
+    return;
+}

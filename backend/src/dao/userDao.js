@@ -28,3 +28,7 @@ export const findUserById = async (id) => {
 export const getUserUrlsDao = async (id) => {
     return await shortUrlModel.find({user : id});
 }
+
+export const deleteUrlById = async (id) => {
+    return await shortUrlModel.findByIdAndDelete({_id : id})
+}

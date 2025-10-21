@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { GetAllUrls_User } from '../api/userApi'
+import { GetAllUrls_User, DeleteUser_Url } from '../api/userApi'
 import { useQuery } from '@tanstack/react-query'
 
 const UserUrl = () => {
@@ -19,6 +19,14 @@ const UserUrl = () => {
         setTimeout(() => {
             setCopiedId(null)
         }, 2000)
+    }
+
+    const deleteUrl = (id) => {
+        try{
+            
+        } catch(e){
+            console.log("Failed to delete URL:", error)
+        }
     }
 
     if (isLoading) {

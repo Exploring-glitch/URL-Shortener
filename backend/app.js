@@ -29,7 +29,7 @@ app.use(attachUser)
 app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter);
 app.use("/api/create", shortUrlRouter);
-app.use("/:id", redirectShortUrl);
+app.use("/:shortUrl", redirectShortUrl);
 
 
 app.use(errorHandler); //global error handler
