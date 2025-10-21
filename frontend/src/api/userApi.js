@@ -2,7 +2,7 @@ import { axiosInstance } from "../utils/axiosInstance"
 
 
 export const signup_User = async (name,email, password) => {
-    const {data} = await axiosInstance.post("api/auth/signup", {name,email, password})
+    const {data} = await axiosInstance.post("api/auth/signup", {name, email, password})
     return data;
 }
 
@@ -24,13 +24,11 @@ export const Current_User = async () => {
 
 export const GetAllUrls_User = async() => {
     const {data} = await axiosInstance.get("api/user/urls");
-    console.log(data)
+    console.log(data.urls)
     return data
 }
 
-export const DeleteUser_Url = async() => {
-    console("Inside api")
-    const {data}  = await axiosInstance.delete("api/user/urls/id")
-    console.log(data)
-    return;
+export const DeleteUser_Url = async(id) => {
+    const {data}  = await axiosInstance.delete(`api/user/urls/delete/${id}`, {withCredentials : true})
+    return data;
 }

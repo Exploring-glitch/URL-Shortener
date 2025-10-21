@@ -6,6 +6,6 @@ import { deleteUrl, getAllUserUrls } from '../controller/userUrlController.js';
 
 userRouter.get("/urls", authMiddleware, getAllUserUrls);
 
-userRouter.delete("/urls/:id", authMiddleware, deleteUrl);
+userRouter.delete("/urls/delete/:id", authMiddleware, deleteUrl);
 
 export default userRouter

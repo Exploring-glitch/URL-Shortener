@@ -34,7 +34,7 @@ export const NavBar = () => {
             <div className='flex gap-3'>
                 <div className="flex items-center">
                     {isAuthenticated ? (
-                        <button onClick={onLogout} className="bg-[#EF4444] hover:bg-[#DC2626] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md font-medium transition-colors duration-200" >Logout</button>
+                        <button onClick={onLogout} className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md font-medium transition-colors duration-200" >Logout</button>
                     ) : (
                         <Link to="/auth" className="bg-[#2979FF] hover:bg-[#1E63E6] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md font-medium transition-colors duration-200">Sign In</Link>)
                     }

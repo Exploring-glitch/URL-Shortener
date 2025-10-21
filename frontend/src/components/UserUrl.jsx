@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { GetAllUrls_User, DeleteUser_Url } from '../api/userApi'
 import { useQuery } from '@tanstack/react-query'
+import { queryClient } from '../main'
+
 
 const UserUrl = () => {
     const { data, isLoading, isError, error } = useQuery({
@@ -21,11 +23,13 @@ const UserUrl = () => {
         }, 2000)
     }
 
-    const deleteUrl = (id) => {
-        try{
-            
-        } catch(e){
-            console.log("Failed to delete URL:", error)
+    const handleDelete = async (id) => {
+        try {
+            await DeleteUser_Url(id) ;
+
+            queryClient.invalidateQueries({ queryKey: ['userUrls'] }) //so that the urls are visible on the screen immedietly after any updation
+        } catch (e) {
+            console.log("Failed to delete URL:", e)
         }
     }
 
@@ -106,28 +110,36 @@ const UserUrl = () => {
                             </span>
                         </div>
 
-                        <div>
+                        <div className=''>
                             <button
-                                onClick={() =>
-                                    handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)
-                                }
-                                className={`mt-2 w-full inline-flex justify-center items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm ${copiedId === url._id
+                                onClick={() => handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)}
+                                className={`mt-2 w-full inline-flex justify-center items-center px-3 py-2 text-sm font-medium rounded-md shadow-sm ${copiedId === url._id
                                     ? "bg-green-600 hover:bg-green-700"
                                     : "bg-[#2979FF] hover:bg-[#1565C0]"
                                     } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2979FF] transition-colors duration-200`}
                             >
                                 {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
                             </button>
+
+                            <button
+                                onClick={() => handleDelete(url._id)}
+                                className="mt-2 w-full inline-flex justify-center items-center px-3 py-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium rounded-md"
+                            >
+                                🗑 Delete
+                            </button>
                         </div>
                     </div>
                 ))}
             </div>
 
+
+
             {/* visible from lg and above */}
             <div className="hidden lg:block bg-[#1E1E1E] rounded-lg mt-5 shadow-lg overflow-hidden border border-[#2C2C2C]">
                 <div className="overflow-x-auto h-56">
                     <table className="min-w-full divide-y divide-[#2C2C2C]">
-                        <thead className="bg-[#2A2A2A]"> {/* thead: table head, tr: table row, th: table heading */}
+                        {/* thead: table head, tr: table row, th: table heading */}
+                        <thead className="bg-[#2A2A2A]">
                             <tr>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
                                     Original URL
@@ -144,7 +156,7 @@ const UserUrl = () => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-[#2C2C2C] bg-[#1E1E1E] text-[#E0E0E0]">
-                            {data.urls.reverse().map((url) => (
+                            {data.urls.map((url) => (
                                 <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
                                     <td className="px-6 py-4">
                                         <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
@@ -164,7 +176,7 @@ const UserUrl = () => {
                                             {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 text-sm font-medium">
+                                    <td className="px-6 py-4 text-sm font-medium flex gap-2">
                                         <button
                                             onClick={() => handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)}
                                             className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm ${copiedId === url._id
@@ -173,6 +185,13 @@ const UserUrl = () => {
                                                 } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2979FF] transition-colors duration-200`}
                                         >
                                             {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
+                                        </button>
+
+                                        <button
+                                            onClick={() => handleDelete(url._id)}
+                                            className="inline-flex items-center px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg"
+                                        >
+                                            🗑 Delete
                                         </button>
                                     </td>
                                 </tr>

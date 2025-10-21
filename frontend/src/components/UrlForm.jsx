@@ -21,7 +21,8 @@ const UrlForm = () => {
       const resultShortUrl = await getShortUrlFromBackend(url, customSlug) //to call the backend api
       setShortUrl(resultShortUrl);
 
-      queryClient.invalidateQueries({ queryKey: ['userUrls'] })
+      queryClient.invalidateQueries({ queryKey: ['userUrls'] }) //so that the urls are visible on the screen immedietly after any updation
+
       setError(null);
 
     } catch (e) {
