@@ -3,11 +3,11 @@ import { GetAllUrls_User } from '../api/userApi'
 import { useQuery } from '@tanstack/react-query'
 
 const UserUrl = () => {
-    const { data: urls, isLoading, isError, error } = useQuery({
+    const { data, isLoading, isError, error } = useQuery({
         queryKey: ['userUrls'],
         queryFn: GetAllUrls_User,
         refetchInterval: 30000, // Refetch every 30 seconds to update click counts
-        staleTime: 0, // Consider data stale immediately so it refetches when invalidated
+        staleTime: 0, // Consider data state immediately so it refetches when invalidated
     })
     const [copiedId, setCopiedId] = useState(null)
 
@@ -37,7 +37,7 @@ const UserUrl = () => {
         )
     }
 
-    if (!urls.urls || urls.urls.length === 0) {
+    if (!data.urls || data.urls.length === 0) { //if user didn't create any short url
         return (
             <div className="text-center text-[#E0E0E0] my-6 p-6 bg-[#1E1E1E] rounded-lg border border-[#2979FF]/30">
                 <svg className="w-12 h-12 mx-auto text-[#E0E0E0] mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,14 +56,14 @@ const UserUrl = () => {
 
     return (
         <div className="p-2 mt-5">
-            {/* 📱 MOBILE CARD VIEW (visible below lg) */}
+            {/* visible below lg */}
             <div className="space-y-4 block lg:hidden">
                 <h2 className="text-[#E0E0E0] text-lg font-semibold mt-8 mb-4 text-center lg:text-left">
                     Your generated URLs:
                 </h2>
-                
-                {urls.urls.reverse().map((url) => (
 
+                {/* here we are using map func to take out a single url from urls object and naming it as 'url' */}
+                {data.urls.reverse().map((url) => (
                     <div key={url._id} className="bg-[#1E1E1E] rounded-lg shadow-md border border-[#2C2C2C] p-4 space-y-2">
 
                         <div>
@@ -115,11 +115,11 @@ const UserUrl = () => {
                 ))}
             </div>
 
-            {/* 💻 TABLE VIEW (visible from md and up) */}
+            {/* visible from lg and above */}
             <div className="hidden lg:block bg-[#1E1E1E] rounded-lg mt-5 shadow-lg overflow-hidden border border-[#2C2C2C]">
                 <div className="overflow-x-auto h-56">
                     <table className="min-w-full divide-y divide-[#2C2C2C]">
-                        <thead className="bg-[#2A2A2A]">
+                        <thead className="bg-[#2A2A2A]"> {/* thead: table head, tr: table row, th: table heading */}
                             <tr>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
                                     Original URL
@@ -136,11 +136,8 @@ const UserUrl = () => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-[#2C2C2C] bg-[#1E1E1E] text-[#E0E0E0]">
-                            {urls.urls.reverse().map((url) => (
-                                <tr
-                                    key={url._id}
-                                    className="hover:bg-[#2A2A2A] transition-colors duration-150"
-                                >
+                            {data.urls.reverse().map((url) => (
+                                <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
                                     <td className="px-6 py-4">
                                         <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
                                     </td>
@@ -161,12 +158,7 @@ const UserUrl = () => {
                                     </td>
                                     <td className="px-6 py-4 text-sm font-medium">
                                         <button
-                                            onClick={() =>
-                                                handleCopy(
-                                                    `http://localhost:3000/${url.shortUrl}`,
-                                                    url._id
-                                                )
-                                            }
+                                            onClick={() => handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)}
                                             className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm ${copiedId === url._id
                                                 ? "bg-green-600 hover:bg-green-700"
                                                 : "bg-[#2979FF] hover:bg-[#1565C0]"
