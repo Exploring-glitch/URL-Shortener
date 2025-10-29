@@ -15,7 +15,7 @@ import cookieParser from "cookie-parser";
 
 //cross origin resource sharing (allows requests from frontend to backend)
 app.use(cors({
-    origin: 'http://localhost:5173', 
+    origin: 'http://localhost:5174', 
     credentials: true //allows cookies to be sent
 }));
 

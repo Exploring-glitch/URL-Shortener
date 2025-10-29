@@ -17,6 +17,10 @@ const SignupUser = ({ state }) => {
 
 
     const handleSubmit = async () => {
+        if(!name || !password || !email){
+            setError("Missing credentials!");
+            return
+        }
         if (password.length < 6) {
             setError('Password must be at least 6 characters long');
             return;

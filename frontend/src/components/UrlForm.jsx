@@ -24,6 +24,7 @@ const UrlForm = () => {
       queryClient.invalidateQueries({ queryKey: ['userUrls'] }) //so that the urls are visible on the screen immedietly after any updation
 
       setError(null);
+      setUrl("")
 
     } catch (e) {
       setError(e.message)
