@@ -10,7 +10,7 @@ const UrlForm = () => {
   const [customSlug, setCustomSlug] = useState("");
   const [error, setError] = useState("");
 
-  const { isAuthenticated } = useSelector((state) => state.auth)
+  const { isAuthenticated } = useSelector((state) => state.auth) //to take out data from the store. 
 
   const inputRef = useRef(null);
 
