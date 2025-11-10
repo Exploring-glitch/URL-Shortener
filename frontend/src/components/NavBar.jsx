@@ -9,7 +9,7 @@ export const NavBar = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-
+    
     const onLogout = async () => {
         const confirmLogout = window.confirm("Are you sure you want to log out?");
         if (!confirmLogout) return;
