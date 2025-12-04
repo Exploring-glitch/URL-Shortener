@@ -15,7 +15,8 @@ import cookieParser from "cookie-parser";
 
 //cross origin resource sharing (allows requests from frontend to backend)
 app.use(cors({
-    origin: 'http://localhost:5174', 
+    //origin: 'http://localhost:5173'
+    origin: process.env.FRONTEND_URL, 
     credentials: true //allows cookies to be sent
 }));
 
@@ -34,8 +35,8 @@ app.use("/:shortUrl", redirectShortUrl);
 
 app.use(errorHandler); //global error handler
 
-
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen( PORT, () => {
     connectDb();
     console.log("Server is running on port 3000");
 })
