@@ -36,7 +36,7 @@ app.use("/:shortUrl", redirectShortUrl);
 app.use(errorHandler); //global error handler
 
 const PORT = process.env.PORT || 3000;
-app.listen( PORT, () => {
+    app.listen( PORT, () => {
     connectDb();
     console.log("Server is running on port 3000");
 })
