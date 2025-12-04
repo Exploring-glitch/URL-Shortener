@@ -16,7 +16,7 @@ import cookieParser from "cookie-parser";
 //cross origin resource sharing (allows requests from frontend to backend)
 app.use(cors({
     origin: ['http://localhost:5173',
-        process.env.APP_URL, 
+        'https://url-shortener-45vx.vercel.app', 
     ],
     credentials: true //allows cookies to be sent
 }));
