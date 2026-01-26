@@ -6,7 +6,7 @@ export const userSignup = wrapAsync( async(req, res) => {
     const {name, email, password} = req.body;
     const {token,user} = await userSignupService(name, email, password);
 
-    res.user = user
+    req.user = user
     res.cookie("token", token, cookieOptions) 
     res.status(200).json({"message" : "Sign Up success"})
 })
