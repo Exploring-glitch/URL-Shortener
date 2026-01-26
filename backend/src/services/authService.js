@@ -20,7 +20,7 @@ export const  userLoginService = async (email, password) =>{
         throw new Error ("Incorrect credentials");
     }
 
-    const isPasswordValid = await user.comparePassword(password);
+    const isPasswordValid = await user.comparePassword(password); //using the comparePassword method from the userSchema directly here.
     if(!isPasswordValid) {
         throw new Error ("Incorrect credentials");
     }

@@ -22,7 +22,7 @@ const userSchema = new mongoose.Schema({
 })
 
 
-userSchema.methods.comparePassword = async function(password){ //compares password and returns true or false accordingly
+userSchema.methods.comparePassword = async function(password){ //we are defining a method that compares password and returns true or false accordingly. We are attaching this method in the user doc in mongoose
     return await bcrypt.compare(password, this.password);
 }
 
