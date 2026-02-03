@@ -1,4 +1,4 @@
-import { axiosInstance } from "../utils/axiosInstance"
+import { axiosInstance } from "../utils/axiosInstance.js"
 
 
 export const signup_User = async (name,email, password) => {

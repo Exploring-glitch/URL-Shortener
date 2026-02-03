@@ -58,7 +58,7 @@ const LoginUser = ({state}) => {
           id="email"
           type="email"
           placeholder="example: conradward@gmail.com"
-          className=" bg-[#2C2C2C] border rounded w-full p-2 text-[#9E9E9E] focus:outline-none focus:ring-2 focus:ring-[#2979FF]"
+          className="bg-[#2C2C2C] border rounded w-full p-2 text-[#9E9E9E] focus:outline-none focus:ring-2 focus:ring-[#2979FF]"
         />
       </div>
 
