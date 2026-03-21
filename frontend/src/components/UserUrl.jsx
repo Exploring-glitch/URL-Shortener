@@ -177,7 +177,7 @@ const UserUrl = () => {
                                         </span>
                                     </td>
 
-                                    <td className="px-2 py-2 text-sm font-medium flex gap-2 items-center">
+                                    <td className="px-6 py-4 h-full text-sm font-medium flex gap-2 items-center">
                                         <button
                                             onClick={() => handleCopy(url.short_url, url._id)}
                                             className={`inline-flex items-center px-4 py-2 border border-transparent text-xs font-medium rounded-lg shadow-sm whitespace-nowrap shrink-0 ${copiedId === url._id
