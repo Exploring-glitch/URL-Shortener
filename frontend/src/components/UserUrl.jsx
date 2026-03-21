@@ -181,9 +181,9 @@ const UserUrl = () => {
                                         <button
                                             onClick={() => handleCopy(url.short_url, url._id)}
                                             className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm ${copiedId === url._id
-                                                ? "bg-green-600 hover:bg-green-700"
-                                                : "bg-[#2979FF] hover:bg-[#1565C0]"
-                                                } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2979FF] transition-colors duration-200`}
+                                                ? "bg-green-600 hover:bg-green-500 hover:border-green-700"
+                                                : "bg-[#2979FF] hover:bg-[#3091ff] hover:border-[#226dc3]"
+                                                } text-white `}
                                         >
                                             {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
                                         </button>
