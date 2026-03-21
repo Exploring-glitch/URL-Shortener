@@ -3,7 +3,7 @@ import { axiosInstance } from "../utils/axiosInstance.js";
 export const getShortUrlFromBackend = async (url, slug) => {
     console.log("hello")
 
-    const {data} = await axiosInstance.post("api/create", {url, slug})
+    const {data} = await axiosInstance.post("/api/create/", {url, slug})
     
     console.log("data", data)
     
