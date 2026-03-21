@@ -77,7 +77,6 @@ const UserUrl = () => {
                 {/* here we are using map func to take out a single url from urls object and naming it as 'url' */}
                 {data.urls.reverse().map((url) => (
                     <div key={url._id} className="bg-[#1E1E1E] rounded-lg shadow-md border border-[#2C2C2C] p-4 space-y-2">
-
                         <div>
                             <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
                                 Original URL:
@@ -91,12 +90,12 @@ const UserUrl = () => {
                             </span>
                             <div>
                                 <a
-                                    href={`http://localhost:3000/${url.shortUrl}`}
+                                    href={url.short_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-[#2979FF] hover:text-[#82B1FF] hover:underline text-sm break-all"
                                 >
-                                    {`localhost:3000/${url.shortUrl}`}
+                                    {url.short_url}
                                 </a>
                             </div>
                         </div>
@@ -110,9 +109,9 @@ const UserUrl = () => {
                             </span>
                         </div>
 
-                        <div className=''>
+                        <div>
                             <button
-                                onClick={() => handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)}
+                                onClick={() => handleCopy(url.short_url, url._id)}
                                 className={`mt-2 w-full inline-flex justify-center items-center px-3 py-2 text-sm font-medium rounded-md shadow-sm ${copiedId === url._id
                                     ? "bg-green-600 hover:bg-green-700"
                                     : "bg-[#2979FF] hover:bg-[#1565C0]"
@@ -131,8 +130,6 @@ const UserUrl = () => {
                     </div>
                 ))}
             </div>
-
-
 
             {/* visible from lg and above */}
             <div className="hidden lg:block bg-[#1E1E1E] rounded-lg mt-5 shadow-lg overflow-hidden border border-[#2C2C2C]">
@@ -155,30 +152,34 @@ const UserUrl = () => {
                                 </th>
                             </tr>
                         </thead>
+
                         <tbody className="divide-y divide-[#2C2C2C] bg-[#1E1E1E] text-[#E0E0E0]">
                             {data.urls.map((url) => (
                                 <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
                                     <td className="px-6 py-4">
                                         <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
                                     </td>
+
                                     <td className="px-6 py-4">
                                         <a
-                                            href={`http://localhost:3000/${url.shortUrl}`}
+                                            href={url.short_url}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-[#2979FF] hover:text-[#82B1FF] hover:underline"
                                         >
-                                            {`localhost:3000/${url.shortUrl}`}
+                                            {url.short_url}
                                         </a>
                                     </td>
+
                                     <td className="px-6 py-4">
                                         <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
                                             {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
                                         </span>
                                     </td>
+
                                     <td className="px-6 py-4 text-sm font-medium flex gap-2">
                                         <button
-                                            onClick={() => handleCopy(`http://localhost:3000/${url.shortUrl}`, url._id)}
+                                            onClick={() => handleCopy(url.short_url, url._id)}
                                             className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm ${copiedId === url._id
                                                 ? "bg-green-600 hover:bg-green-700"
                                                 : "bg-[#2979FF] hover:bg-[#1565C0]"
@@ -204,4 +205,4 @@ const UserUrl = () => {
     );
 }
 
-export default UserUrl
+export default UserUrl;

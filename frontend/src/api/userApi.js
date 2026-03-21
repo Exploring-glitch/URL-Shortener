@@ -24,6 +24,7 @@ export const Current_User = async () => {
 
 export const GetAllUrls_User = async() => {
     const {data} = await axiosInstance.get("api/user/urls");
+    console.log("data here: ", data)
     return data
 }
 
