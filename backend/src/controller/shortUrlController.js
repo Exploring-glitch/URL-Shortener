@@ -8,7 +8,7 @@ export const createShortUrl = wrapAsync(async (req, res, next) => { //CREATING T
         ? process.env.APP_URL
         : process.env.APP_URL + "/";
 
-    let shortUrl;
+    let full_short_url;
     if (req.user) { //comes from attachUser.js file
         full_short_url = await createShortUrlWithUserService(data.url, req.user._id, data.slug, baseUrl);
     } else {
