@@ -14,17 +14,17 @@ import cookieParser from "cookie-parser";
 
 
 //cross origin resource sharing (allows requests from frontend to backend)
-/*app.use(cors({
-    origin: ['http://localhost:5174',
-        'https://url-shortener-45vx.vercel.app', 
-    ],
-    credentials: true //allows cookies to be sent
-})); */
-
 app.use(cors({
-  origin: "http://localhost:5174", // must match your frontend URL exactly
+    origin: ['https://url-shortener-45vx.vercel.app'],
+    credentials: true //allows cookies to be sent
+})); 
+
+/*
+app.use(cors({
+  origin: "http://localhost:5173", // must match your frontend URL exactly
   credentials: true // allows cookies to be sent
 }));
+*/
 
 
 app.use(express.json());
@@ -36,7 +36,7 @@ app.use(attachUser)
 app.use("/api/user", userRouter)
 app.use("/api/auth", authRouter);
 app.use("/api/create", shortUrlRouter);
-app.use("/:shortUrl", redirectShortUrl);
+app.get("/:shortUrl", redirectShortUrl);
 
 
 app.use(errorHandler); //global error handler

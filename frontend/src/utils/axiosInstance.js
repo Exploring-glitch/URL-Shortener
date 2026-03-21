@@ -1,6 +1,6 @@
 import axios from "axios";
 //const API = import.meta.env.VITE_API_URL;
-const API = "http://localhost:3000"
+const API = "https://url-shortener-n4ee.onrender.com"
 
 const axiosInstance = axios.create({
     baseURL: API ,
