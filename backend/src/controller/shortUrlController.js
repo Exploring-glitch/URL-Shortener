@@ -12,7 +12,7 @@ export const createShortUrl = wrapAsync(async (req, res, next) => { //CREATING T
     if (req.user) { //comes from attachUser.js file
         full_short_url = await createShortUrlWithUserService(data.url, req.user._id, data.slug, baseUrl);
     } else {
-        shortUrl = await createShortUrlWithoutUserService(data.url, baseUrl);
+        full_short_url = await createShortUrlWithoutUserService(data.url, baseUrl);
     }
 
     res.status(200).json({ result: full_short_url });
