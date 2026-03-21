@@ -6,8 +6,6 @@ export const createShortUrlWithoutUserService = async (url) =>{ //takes url as i
     const shortUrl = generateNanoid(7); //calling the generateNanoid func written inside utils
     if(!shortUrl) throw new Error("Short URL not generated")
 
-    console.log("shortUrl: ", shortUrl)
-    
     await saveShortUrlDao(url, shortUrl); //calling the dao function to save the url to the database
     return(shortUrl); 
 }
