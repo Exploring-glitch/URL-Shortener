@@ -177,20 +177,20 @@ const UserUrl = () => {
                                         </span>
                                     </td>
 
-                                    <td className="px-6 py-2 text-sm font-medium flex gap-2">
+                                    <td className="px-6 py-3 text-sm font-medium flex gap-2 items-center">
                                         <button
                                             onClick={() => handleCopy(url.short_url, url._id)}
-                                            className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm ${copiedId === url._id
-                                                ? "bg-green-600 hover:bg-green-500 hover:border-green-700"
-                                                : "bg-[#2979FF] hover:bg-[#3091ff] hover:border-[#226dc3]"
-                                                } text-white `}
+                                            className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm whitespace-nowrap shrink-0 ${copiedId === url._id
+                                                ? "bg-green-600 hover:bg-green-700"
+                                                : "bg-[#2979FF] hover:bg-[#1565C0]"
+                                                } text-white focus:outline-none`}
                                         >
                                             {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
                                         </button>
 
                                         <button
                                             onClick={() => handleDelete(url._id)}
-                                            className="inline-flex items-center px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg"
+                                            className="flex items-center px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg whitespace-nowrap shrink-0"
                                         >
                                             🗑 Delete
                                         </button>
