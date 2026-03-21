@@ -8,10 +8,12 @@ export const createShortUrlWithoutUserService = async (url, baseUrl) => { //take
 
     const full_short_url = baseUrl + shortUrl
 
-    await saveShortUrlDao(url, shortUrl, full_short_url); //calling the dao function to save the url to the database
+    await saveShortUrlDao(url, shortUrl, full_short_url, null); //calling the dao function to save the url to the database
     
     return (full_short_url);
 }
+
+
 
 export const createShortUrlWithUserService = async (url, userId, slug = null, baseUrl) => {
     const shortUrl = slug || generateNanoid(7); //if slug exists then slug or else call the  generateNanoid func
@@ -22,7 +24,7 @@ export const createShortUrlWithUserService = async (url, userId, slug = null, ba
 
     const full_short_url = baseUrl + shortUrl
 
-    await saveShortUrlDao(url, shortUrl, userId, full_short_url);
+    await saveShortUrlDao(url, shortUrl, full_short_url, userId);
 
     return (full_short_url);
 }
