@@ -177,10 +177,10 @@ const UserUrl = () => {
                                         </span>
                                     </td>
 
-                                    <td className="px-6 py-3 text-sm font-medium flex gap-2 items-center">
+                                    <td className="px-2 py-2 text-sm font-medium flex gap-2 items-center">
                                         <button
                                             onClick={() => handleCopy(url.short_url, url._id)}
-                                            className={`inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-lg shadow-sm whitespace-nowrap shrink-0 ${copiedId === url._id
+                                            className={`inline-flex items-center px-4 py-2 border border-transparent text-xs font-medium rounded-lg shadow-sm whitespace-nowrap shrink-0 ${copiedId === url._id
                                                 ? "bg-green-600 hover:bg-green-700"
                                                 : "bg-[#2979FF] hover:bg-[#1565C0]"
                                                 } text-white focus:outline-none`}
@@ -190,7 +190,7 @@ const UserUrl = () => {
 
                                         <button
                                             onClick={() => handleDelete(url._id)}
-                                            className="flex items-center px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg whitespace-nowrap shrink-0"
+                                            className="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg whitespace-nowrap shrink-0"
                                         >
                                             🗑 Delete
                                         </button>
