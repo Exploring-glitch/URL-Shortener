@@ -14,6 +14,13 @@ const shortUrlSchema = new mongoose.Schema({
         index: true
     },
 
+    short_url : {
+        type: String, 
+        required: true,
+        unique: true, 
+        index: true
+    },
+
     clicks: {
         type: Number, 
         default: 0, 

@@ -10,14 +10,15 @@ export const createShortUrlWithoutUserService = async (url) =>{ //takes url as i
     return(shortUrl); 
 }
 
-export const createShortUrlWithUserService = async (url, userId, slug = null) =>{ 
+export const createShortUrlWithUserService = async (url, userId, slug = null, baseUrl) =>{ 
     const shortUrl = slug || generateNanoid(7); //if slug exists then slug or else call the  generateNanoid func
     if(!shortUrl) throw new Error("Short URL not generated") 
     
     const exists = await checkCustomUrlDao(slug)
     if(exists){ throw new Error("This custom Url already exists")}
 
-    await saveShortUrlDao(url, shortUrl, userId); 
+    const short_url = baseUrl + shortUrl
+    await saveShortUrlDao(url, shortUrl, userId, short_url); 
     return(shortUrl);
 }
 
