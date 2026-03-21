@@ -6,8 +6,9 @@ export const redirectShortUrl = wrapAsync( async (req, res) =>{ //REDIRECTING SH
     const {shortUrl} = req.params;
     const url = await findShortUrl(shortUrl);
     
+    console.log("hiii")
     console.log("url: ", url)
-    
+
     if(!url){
         throw new Error("Short URL not found");
     }
