@@ -102,8 +102,8 @@ const UrlForm = () => {
 
             <button
               onClick={handleCopy}
-              className={`p-1 sm:p-2 rounded transition-colors duration-200 ${copied ? 'bg-green-600' : 'bg-[#2467f8] hover:bg-[#175ad6]'}`
-              }> {copied ? 'Yay! Copied' : 'Copy'}
+              className={`px-3 p-2 rounded-md text-sm font-medium transition-colors duration-200 ${copied ? 'bg-[#FAFAFA] text-[#0A0A0A]' : 'border border-[#FAFAFA] text-[#FAFAFA] hover:bg-[#1A1A1A]'}`
+              }> {copied ? 'Copied' : 'Copy'}
             </button>
           </div>
         </div>
