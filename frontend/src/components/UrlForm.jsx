@@ -90,14 +90,14 @@ const UrlForm = () => {
 
       {shortUrl && (    //This div is shown only if shortUrl is prsent
         <div className="mt-6">
-          <h2 className="mb-2 text-[#B0B0B0]">Shortened URL :</h2>
+          <h2 className="mb-2 text-sm text-[#A3A3A3]">Shortened URL</h2>
 
           <div className="flex gap-2">
             <input
               type="text"
               readOnly
               value={shortUrl}
-              className="flex-1 p-1 sm:p-2 border border-[#00BFA5] rounded bg-[#1E1E1E] text-[#E0E0E0]"
+              className="flex-1 min-w-0 p-2 border border-[#333333] rounded-md bg-[#111111] text-[#FAFAFA] text-sm"
             />
 
             <button
