@@ -40,7 +40,7 @@ const LoginUser = ({state}) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-center mb-6">Sign In</h2>
+      <h2 className="text-2xl font-semibold tracking-tight text-center mb-6">Sign In</h2>
 
       {error && (
         <div className="mb-4 p-2 sm:p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
