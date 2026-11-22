@@ -108,8 +108,9 @@ const SignupUser = ({ state }) => {
             </div>
 
             <div className="text-center mt-4">
-                <p className="cursor-pointer text-sm text-gray-600">
-                    Already have an account? <span onClick={() => state(true)} className="text-[#2979FF] hover:text-[#2168ec]"><u>Sign In</u></span>
+                <p className="text-sm text-[#A3A3A3]">
+                    Already have an account?{' '}
+                    <span onClick={() => state(true)} className="cursor-pointer text-[#FAFAFA] underline underline-offset-4 hover:text-[#D4D4D4] transition-colors">Sign In</span>
                 </p>
             </div>
         </div>
