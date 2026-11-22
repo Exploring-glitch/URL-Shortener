@@ -22,31 +22,20 @@ const HomePage = () => {
         </p>
       </div>
 
-      <div className='bg-[#1E1E1E] w-full max-w-4xl p-10 mt-10 sm:mt-16 rounded-xl shadow-lg text-gray-300 mb-24'>
-        <h2 className="text-2xl font-semibold text-center mb-6 text-white">
-          Why Use Our URL Shortener?
-        </h2>
-
-        <div className="space-y-6 xl:space-y-10 xl:text-xl xl:mt-15 text-gray-300">
-          <p>
-            <span className="text-blue-400 font-medium">Effortless Link Shortening: </span> 
-            Transform long URLs into short, easy-to-share links in seconds — perfect for social media, emails, or SMS.
-          </p>
-          <p>
-            <span className="text-blue-400 font-medium">Powerful & Reliable: </span>
-            Our system handles millions of clicks with lightning-fast response times — around 50 milliseconds.
-          </p>
-          <p>
-            <span className="text-blue-400 font-medium">Free & Secure: </span>
-            Enjoy a premium shortening service that's 100% free. Your shortened links never expire, giving you total control and trust.
-          </p>
-          <p>
-            <span className="text-blue-400 font-medium">Developer Friendly: </span>
-            Integrate our easy-to-use API into any app or system, and monitor click performance through our analytics dashboard.
-          </p>
-          <p>
-            Shorten links for <span className="font-medium"> Google, Amazon, WhatsApp, YouTube, Facebook, Instagram, Twitter</span>, and many more — all from one place.
-          </p>
+      <div className='w-full max-w-2xl mt-16 sm:mt-20 pb-8'>
+        <div className='grid gap-6 sm:grid-cols-3 sm:gap-8'>
+          <div className='border-t border-[#262626] pt-4'>
+            <h2 className='text-sm font-medium'>Fast</h2>
+            <p className='text-sm text-[#A3A3A3] mt-1'>Short links in seconds.</p>
+          </div>
+          <div className='border-t border-[#262626] pt-4'>
+            <h2 className='text-sm font-medium'>Free</h2>
+            <p className='text-sm text-[#A3A3A3] mt-1'>No signup needed to shorten.</p>
+          </div>
+          <div className='border-t border-[#262626] pt-4'>
+            <h2 className='text-sm font-medium'>Trackable</h2>
+            <p className='text-sm text-[#A3A3A3] mt-1'>Sign in for clicks and link management.</p>
+          </div>
         </div>
       </div>
     </div>
