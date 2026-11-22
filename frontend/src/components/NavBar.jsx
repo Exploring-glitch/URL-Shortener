@@ -35,7 +35,7 @@ export const NavBar = () => {
                     {isAuthenticated ? (
                         <button onClick={onLogout} className="border border-[#404040] text-[#FAFAFA] hover:bg-[#1A1A1A] px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm font-medium transition-colors duration-200" >Logout</button>
                     ) : (
-                        <Link to="/auth" className="bg-[#2979FF] hover:bg-[#1E63E6] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md font-medium transition-colors duration-200">Sign In</Link>)
+                        <Link to="/auth" className="bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A] px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm font-medium transition-colors duration-200">Sign In</Link>)
                     }
                 </div>
             </div>
