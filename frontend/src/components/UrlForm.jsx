@@ -67,8 +67,8 @@ const UrlForm = () => {
 
       {isAuthenticated && (
         <div>
-          <label htmlFor="customSlug" className="text-[#B0B0B0] mb-1">
-            Custom URL (optional) :
+          <label htmlFor="customSlug" className="block text-sm text-[#A3A3A3] mb-1">
+            Custom URL (optional)
           </label>
           <div>
             <input
@@ -76,8 +76,8 @@ const UrlForm = () => {
               id="customSlug"
               value={customSlug}
               onChange={(c) => setCustomSlug(c.target.value)}
-              placeholder="enter your custom slug"
-              className='w-full sm:w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
+              placeholder="your-custom-slug"
+              className='w-full p-2.5 mt-2 rounded-md border border-[#333333] bg-[#111111] text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] mb-4 text-sm'
             />
           </div>
         </div>
