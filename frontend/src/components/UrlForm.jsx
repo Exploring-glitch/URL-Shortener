@@ -51,7 +51,7 @@ const UrlForm = () => {
 
       <label
         htmlFor='originalUrl'
-        className='text-[#B0B0B0]'>Enter the original URL :
+        className='block text-sm text-[#A3A3A3]'>Enter the original URL
       </label>
       <div>
         <input
@@ -60,8 +60,8 @@ const UrlForm = () => {
           value={url}
           onInput={(c) => { setUrl(c.target.value) }} //changes the value of url to what user types
           type="url"
-          placeholder='for example: https://example.com'
-          className='w-full sm:w-100 p-2 mt-2 rounded border border-[#B0B0B0] bg-[#2C2C2C] text-[#E0E0E0] focus:outline-none focus:ring-2 focus:ring-[#448AFF] mb-4'
+          placeholder='https://example.com'
+          className='w-full p-2.5 mt-2 rounded-md border border-[#333333] bg-[#111111] text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] mb-4 text-sm'
         />
       </div>
 
