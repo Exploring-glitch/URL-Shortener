@@ -47,7 +47,7 @@ const SignupUser = ({ state }) => {
             <h2 className="text-2xl font-semibold tracking-tight text-center mb-6">Create an Account</h2>
 
             {error && (
-                <div className="mb-4 p-2 sm:p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
+                <div className="mb-4 p-3 border border-[#404040] text-[#FAFAFA] rounded-md text-sm">
                     {error}
                 </div>
             )}
