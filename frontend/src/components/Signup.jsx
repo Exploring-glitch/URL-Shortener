@@ -53,7 +53,7 @@ const SignupUser = ({ state }) => {
             )}
 
             <div className="mb-4">
-                <label className="block text-[#E0E0E0] text-sm font-bold mb-2" htmlFor="name">
+                <label className="block text-sm text-[#A3A3A3] mb-2" htmlFor="name">
                     Full Name
                 </label>
                 <input
@@ -61,8 +61,8 @@ const SignupUser = ({ state }) => {
                     onInput={(c) => { setName(c.target.value) }}
                     id="name"
                     type="text"
-                    placeholder="example: Conrad Ward"
-                    className=" bg-[#2C2C2C] border rounded w-full p-2 text-[#9E9E9E] focus:outline-none focus:ring-2 focus:ring-[#2979FF]"
+                    placeholder="Your name"
+                    className="bg-[#111111] border border-[#333333] rounded-md w-full p-2.5 text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] text-sm"
                 />
             </div>
 
