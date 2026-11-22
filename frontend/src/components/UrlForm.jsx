@@ -44,7 +44,7 @@ const UrlForm = () => {
   return (
     <div>
       {error && (
-        <div className="mb-4 p-2 sm:p-3 bg-[#2B0D0D] text-[#FF6B6B] rounded-md">
+        <div className="mb-4 p-3 border border-[#404040] text-[#FAFAFA] rounded-md text-sm">
           {error}
         </div>
       )}
