@@ -27,8 +27,8 @@ export const NavBar = () => {
     }
 
     return (
-        <nav className="bg-[#1E1E1E] px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-            <h1 className="text-[#E0E0E0] text-lg sm:text-2xl font-semibold"> URL <span className="text-[#2979FF]">Shortener</span></h1>
+        <nav className="bg-[#0A0A0A] border-b border-[#262626] px-4 sm:px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+            <h1 className="text-[#FAFAFA] text-base sm:text-lg font-medium tracking-tight">URL Shortener</h1>
 
             <div className='flex gap-3'>
                 <div className="flex items-center">
