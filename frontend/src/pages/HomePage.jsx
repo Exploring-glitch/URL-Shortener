@@ -12,7 +12,6 @@ const HomePage = () => {
       </div>
 
       <div className='w-full max-w-lg mt-10 sm:mt-12 border border-[#262626] rounded-lg p-5 sm:p-7'>
-        <h1 className="text-lg font-medium text-center mb-6">URL Shortener</h1>
         <UrlForm />
       </div>
 
