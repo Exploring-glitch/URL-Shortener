@@ -11,8 +11,8 @@ const HomePage = () => {
         <p className="text-sm sm:text-base text-[#A3A3A3] max-w-md mx-auto leading-relaxed">Paste a long URL and get a short one in seconds. Free, fast, and yours to keep.</p>
       </div>
 
-      <div className='bg-[#1E1E1E] w-full max-w-md xl:max-w-lg p-4 sm:p-8 rounded-lg mt-15 sm:mt-20'>
-        <h1 className="text-2xl font-bold text-center mb-6">URL Shortener</h1>
+      <div className='w-full max-w-lg mt-10 sm:mt-12 border border-[#262626] rounded-lg p-5 sm:p-7'>
+        <h1 className="text-lg font-medium text-center mb-6">URL Shortener</h1>
         <UrlForm />
       </div>
 
