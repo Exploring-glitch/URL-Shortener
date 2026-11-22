@@ -85,7 +85,7 @@ const UrlForm = () => {
 
       <button
         onClick={handleSubmit}
-        className='w-full sm:w-100 mt-2 bg-[#1f64fa] hover:bg-[#175ad6] text-[#E0E0E0] p-2 rounded transition-colors duration-200'> Click to Shorten
+        className='w-full mt-2 bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A] p-2.5 rounded-md font-medium text-sm transition-colors duration-200'>Shorten URL
       </button>
 
       {shortUrl && (    //This div is shown only if shortUrl is prsent
