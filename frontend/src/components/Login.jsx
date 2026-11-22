@@ -49,7 +49,7 @@ const LoginUser = ({state}) => {
       )}
 
       <div className="mb-4">
-        <label className="block text-[#E0E0E0] text-sm font-bold mb-2" htmlFor="email">
+        <label className="block text-sm text-[#A3A3A3] mb-2" htmlFor="email">
           Email
         </label>
         <input
@@ -57,8 +57,8 @@ const LoginUser = ({state}) => {
           onInput={(c) => {setEmail(c.target.value)}}
           id="email"
           type="email"
-          placeholder="example: conradward@gmail.com"
-          className="bg-[#2C2C2C] border rounded w-full p-2 text-[#9E9E9E] focus:outline-none focus:ring-2 focus:ring-[#2979FF]"
+          placeholder="you@example.com"
+          className="bg-[#111111] border border-[#333333] rounded-md w-full p-2.5 text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] text-sm"
         />
       </div>
 
