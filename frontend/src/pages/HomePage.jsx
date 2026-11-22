@@ -16,9 +16,9 @@ const HomePage = () => {
       </div>
 
       <div>
-        <p className="text-gray-400 mt-4 sm:mt-6 text-balance text-center text-sm sm:text-md xl:text-lg ">
-          Want to customize and track your created URLs?
-          <Link to="/auth" className="text-[#2979FF] hover:text-[#2168ec] font-medium transition"> Sign in now! </Link>
+        <p className="text-[#A3A3A3] mt-5 text-center text-sm">
+          Want to customize and track your links?{' '}
+          <Link to="/auth" className="text-[#FAFAFA] underline underline-offset-4 hover:text-[#D4D4D4] transition-colors">Sign in</Link>
         </p>
       </div>
 
