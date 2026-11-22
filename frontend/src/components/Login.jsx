@@ -80,7 +80,7 @@ const LoginUser = ({state}) => {
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="bg-[#2979FF] hover:bg-[#1E63E6] text-white transition-colors duration-200 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+          className="bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A] transition-colors duration-200 font-medium text-sm py-2.5 px-4 rounded-md focus:outline-none disabled:opacity-50 w-full"
         >
           {loading ? 'Signing in...' : 'Sign In'}
         </button>
