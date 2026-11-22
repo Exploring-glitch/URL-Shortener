@@ -6,9 +6,9 @@ const HomePage = () => {
   return (
     <div className='min-h-screen bg-[#0A0A0A] flex flex-col items-center text-[#FAFAFA] px-4 sm:px-6 py-12 sm:py-16'>
 
-      <div className="text-center mt-10 sm:mt-24">
-        <h1 className="text-3xl sm:text-4xl xl:text-5xl font-bold mb-3 xl:mb-5">Welcome to URL <span className="text-[#2979FF]">Shortener</span></h1>
-        <h2 className="text-sm text-center sm:text-xl text-blue-400 max-w-2xl xl:max-w-lg mx-auto">Spark instant connections with your audience using trimmed, trustworthy, and trackable links</h2>
+      <div className="text-center max-w-xl">
+        <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight mb-3">Shorten a link, simply.</h1>
+        <p className="text-sm sm:text-base text-[#A3A3A3] max-w-md mx-auto leading-relaxed">Paste a long URL and get a short one in seconds. Free, fast, and yours to keep.</p>
       </div>
 
       <div className='bg-[#1E1E1E] w-full max-w-md xl:max-w-lg p-4 sm:p-8 rounded-lg mt-15 sm:mt-20'>
