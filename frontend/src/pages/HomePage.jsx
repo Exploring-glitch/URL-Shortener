@@ -4,7 +4,7 @@ import { Link } from '@tanstack/react-router';
 
 const HomePage = () => {
   return (
-    <div className='min-h-screen bg-[#171717] flex flex-col items-center justify-center text-[#E0E0E0] p-4'>
+    <div className='min-h-screen bg-[#0A0A0A] flex flex-col items-center text-[#FAFAFA] px-4 sm:px-6 py-12 sm:py-16'>
 
       <div className="text-center mt-10 sm:mt-24">
         <h1 className="text-3xl sm:text-4xl xl:text-5xl font-bold mb-3 xl:mb-5">Welcome to URL <span className="text-[#2979FF]">Shortener</span></h1>
