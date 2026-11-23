@@ -136,7 +136,7 @@ const UserUrl = () => {
                 <div className="overflow-x-auto h-56">
                     <table className="min-w-full divide-y divide-[#262626]">
                         {/* thead: table head, tr: table row, th: table heading */}
-                        <thead className="bg-[#2A2A2A]">
+                        <thead className="bg-[#111111]">
                             <tr>
                                 <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
                                     Original URL
