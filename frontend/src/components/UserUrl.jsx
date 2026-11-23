@@ -190,7 +190,7 @@ const UserUrl = () => {
 
                                         <button
                                             onClick={() => handleDelete(url._id)}
-                                            className="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg whitespace-nowrap shrink-0"
+                                            className="flex items-center px-4 py-2 border border-[#404040] text-[#FAFAFA] hover:bg-[#1A1A1A] text-xs font-medium rounded-md whitespace-nowrap shrink-0 transition-colors duration-200"
                                         >
                                             Delete
                                         </button>
