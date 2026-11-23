@@ -153,7 +153,7 @@ const UserUrl = () => {
                             </tr>
                         </thead>
 
-                        <tbody className="divide-y divide-[#262626] bg-[#1E1E1E] text-[#E0E0E0]">
+                        <tbody className="divide-y divide-[#262626] text-[#FAFAFA]">
                             {data.urls.map((url) => (
                                 <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
                                     <td className="px-6 py-4">
