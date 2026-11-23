@@ -76,7 +76,7 @@ const UserUrl = () => {
 
                 {/* here we are using map func to take out a single url from urls object and naming it as 'url' */}
                 {data.urls.reverse().map((url) => (
-                    <div key={url._id} className="bg-[#1E1E1E] rounded-lg shadow-md border border-[#2C2C2C] p-4 space-y-2">
+                    <div key={url._id} className="bg-[#111111] rounded-lg border border-[#262626] p-4 space-y-2">
                         <div>
                             <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
                                 Original URL:
