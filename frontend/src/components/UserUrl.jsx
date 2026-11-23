@@ -104,7 +104,7 @@ const UserUrl = () => {
                             <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
                                 Clicks:
                             </span>
-                            <span className="px-2 ml-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
+                            <span className="px-2 ml-2 inline-flex text-xs leading-5 font-medium rounded border border-[#333333] bg-[#1A1A1A] text-[#FAFAFA]">
                                 {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
                             </span>
                         </div>
