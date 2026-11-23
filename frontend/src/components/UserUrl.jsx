@@ -70,7 +70,7 @@ const UserUrl = () => {
         <div className="p-2 mt-5">
             {/* visible below lg */}
             <div className="space-y-4 block lg:hidden">
-                <h2 className="text-[#E0E0E0] text-lg font-semibold mt-8 mb-4 text-center lg:text-left">
+                <h2 className="text-[#FAFAFA] text-lg font-medium mt-8 mb-4 text-center lg:text-left">
                     Your generated URLs:
                 </h2>
 
