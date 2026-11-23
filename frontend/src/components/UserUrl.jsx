@@ -78,14 +78,14 @@ const UserUrl = () => {
                 {data.urls.reverse().map((url) => (
                     <div key={url._id} className="bg-[#111111] rounded-lg border border-[#262626] p-4 space-y-2">
                         <div>
-                            <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
+                            <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
                                 Original URL:
                             </span>
                             <div className="text-sm text-[#E0E0E0] truncate">{url.fullUrl}</div>
                         </div>
 
                         <div>
-                            <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
+                            <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
                                 Short URL:
                             </span>
                             <div>
@@ -101,7 +101,7 @@ const UserUrl = () => {
                         </div>
 
                         <div>
-                            <span className="text-[#B0B0B0] text-xs font-semibold uppercase">
+                            <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
                                 Clicks:
                             </span>
                             <span className="px-2 ml-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
