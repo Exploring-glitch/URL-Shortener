@@ -138,16 +138,16 @@ const UserUrl = () => {
                         {/* thead: table head, tr: table row, th: table heading */}
                         <thead className="bg-[#111111]">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
                                     Original URL
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
                                     Short URL
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
                                     Clicks
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#B0B0B0] uppercase tracking-wider">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
                                     Actions
                                 </th>
                             </tr>
