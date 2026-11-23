@@ -43,7 +43,7 @@ const UserUrl = () => {
 
     if (isError) {
         return (
-            <div className="bg-[#2B0D0D] text-[#FF6B6B] px-4 py-3 rounded my-4">
+            <div className="border border-[#404040] text-[#FAFAFA] px-4 py-3 rounded-md my-4 text-sm">
                 Error loading your URLs: {error.message}
             </div>
         )
