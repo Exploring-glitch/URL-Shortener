@@ -180,10 +180,10 @@ const UserUrl = () => {
                                     <td className="px-6 py-4 h-full text-sm font-medium flex gap-2 items-center">
                                         <button
                                             onClick={() => handleCopy(url.short_url, url._id)}
-                                            className={`inline-flex items-center px-4 py-2 border border-transparent text-xs font-medium rounded-lg shadow-sm whitespace-nowrap shrink-0 ${copiedId === url._id
-                                                ? "bg-green-600 hover:bg-green-700"
-                                                : "bg-[#2979FF] hover:bg-[#1565C0]"
-                                                } text-white focus:outline-none`}
+                                            className={`inline-flex items-center px-4 py-2 text-xs font-medium rounded-md whitespace-nowrap shrink-0 transition-colors duration-200 ${copiedId === url._id
+                                                ? "bg-[#1A1A1A] text-[#FAFAFA] border border-[#404040]"
+                                                : "bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A]"
+                                                } focus:outline-none`}
                                         >
                                             {copiedId === url._id ? "Copied" : "Copy URL"}
                                         </button>
