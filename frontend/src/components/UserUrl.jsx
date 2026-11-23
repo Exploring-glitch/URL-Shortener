@@ -93,7 +93,7 @@ const UserUrl = () => {
                                     href={url.short_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-[#2979FF] hover:text-[#82B1FF] hover:underline text-sm break-all"
+                                    className="text-[#FAFAFA] underline underline-offset-4 hover:text-[#D4D4D4] text-sm break-all"
                                 >
                                     {url.short_url}
                                 </a>
