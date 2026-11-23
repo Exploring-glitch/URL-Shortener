@@ -117,7 +117,7 @@ const UserUrl = () => {
                                     : "bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A]"
                                     } focus:outline-none`}
                             >
-                                {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
+                                {copiedId === url._id ? "Copied" : "Copy URL"}
                             </button>
 
                             <button
@@ -185,7 +185,7 @@ const UserUrl = () => {
                                                 : "bg-[#2979FF] hover:bg-[#1565C0]"
                                                 } text-white focus:outline-none`}
                                         >
-                                            {copiedId === url._id ? "✅ Copied!" : "📋 Copy URL"}
+                                            {copiedId === url._id ? "Copied" : "Copy URL"}
                                         </button>
 
                                         <button
