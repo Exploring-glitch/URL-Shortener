@@ -124,7 +124,7 @@ const UserUrl = () => {
                                 onClick={() => handleDelete(url._id)}
                                 className="mt-2 w-full inline-flex justify-center items-center px-3 py-2 border border-[#404040] text-[#FAFAFA] hover:bg-[#1A1A1A] text-sm font-medium rounded-md transition-colors duration-200"
                             >
-                                🗑 Delete
+                                Delete
                             </button>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ const UserUrl = () => {
                                             onClick={() => handleDelete(url._id)}
                                             className="flex items-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white text-xs font-medium rounded-lg whitespace-nowrap shrink-0"
                                         >
-                                            🗑 Delete
+                                            Delete
                                         </button>
                                     </td>
                                 </tr>
