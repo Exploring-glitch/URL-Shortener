@@ -51,7 +51,7 @@ const UserUrl = () => {
 
     if (!data.urls || data.urls.length === 0) { //if user didn't create any short url
         return (
-            <div className="text-center text-[#E0E0E0] my-6 p-6 bg-[#1E1E1E] rounded-lg border border-[#2979FF]/30">
+            <div className="text-center text-[#FAFAFA] my-6 p-6 bg-[#111111] rounded-lg border border-[#262626]">
                 <svg className="w-12 h-12 mx-auto text-[#E0E0E0] mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
