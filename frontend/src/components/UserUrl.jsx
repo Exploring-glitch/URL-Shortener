@@ -172,7 +172,7 @@ const UserUrl = () => {
                                     </td>
 
                                     <td className="px-2 py-2">
-                                        <span className="px-4 py-2 flex text-xs leading-5 font-semibold rounded-full bg-[#1B263B] text-[#82B1FF]">
+                                        <span className="px-3 py-1 flex w-fit text-xs leading-5 font-medium rounded border border-[#333333] bg-[#1A1A1A] text-[#FAFAFA]">
                                             {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
                                         </span>
                                     </td>
