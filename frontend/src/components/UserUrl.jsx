@@ -132,7 +132,7 @@ const UserUrl = () => {
             </div>
 
             {/* visible from lg and above */}
-            <div className="hidden lg:block bg-[#1E1E1E] rounded-lg mt-5 shadow-lg overflow-hidden border border-[#2C2C2C]">
+            <div className="hidden lg:block rounded-lg mt-5 overflow-hidden border border-[#262626]">
                 <div className="overflow-x-auto h-56">
                     <table className="min-w-full divide-y divide-[#2C2C2C]">
                         {/* thead: table head, tr: table row, th: table heading */}
