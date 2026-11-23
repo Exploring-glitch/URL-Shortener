@@ -155,7 +155,7 @@ const UserUrl = () => {
 
                         <tbody className="divide-y divide-[#262626] text-[#FAFAFA]">
                             {data.urls.map((url) => (
-                                <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
+                                <tr key={url._id} className="hover:bg-[#141414] transition-colors duration-150">
                                     <td className="px-6 py-4">
                                         <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
                                     </td>
