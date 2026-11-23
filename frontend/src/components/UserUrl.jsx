@@ -134,7 +134,7 @@ const UserUrl = () => {
             {/* visible from lg and above */}
             <div className="hidden lg:block rounded-lg mt-5 overflow-hidden border border-[#262626]">
                 <div className="overflow-x-auto h-56">
-                    <table className="min-w-full divide-y divide-[#2C2C2C]">
+                    <table className="min-w-full divide-y divide-[#262626]">
                         {/* thead: table head, tr: table row, th: table heading */}
                         <thead className="bg-[#2A2A2A]">
                             <tr>
@@ -153,7 +153,7 @@ const UserUrl = () => {
                             </tr>
                         </thead>
 
-                        <tbody className="divide-y divide-[#2C2C2C] bg-[#1E1E1E] text-[#E0E0E0]">
+                        <tbody className="divide-y divide-[#262626] bg-[#1E1E1E] text-[#E0E0E0]">
                             {data.urls.map((url) => (
                                 <tr key={url._id} className="hover:bg-[#2A2A2A] transition-colors duration-150">
                                     <td className="px-6 py-4">
