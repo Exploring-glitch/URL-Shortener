@@ -55,9 +55,9 @@ const UserUrl = () => {
                 <svg className="w-12 h-12 mx-auto text-[#A3A3A3] mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
-                <p className="text-lg font-semibold">No URLs yet!</p>
-                <p className="mt-1 text-[#B0B0B0]">
-                    Create your <span className="text-[#2979FF] font-medium">first short URL</span> to get started.
+                <p className="text-lg font-medium">No URLs yet</p>
+                <p className="mt-1 text-sm text-[#A3A3A3]">
+                    Create your <span className="text-[#FAFAFA] underline underline-offset-4">first short URL</span> to get started.
                 </p>
             </div>
         );
