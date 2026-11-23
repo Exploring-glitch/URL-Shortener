@@ -81,7 +81,7 @@ const UserUrl = () => {
                             <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
                                 Original URL:
                             </span>
-                            <div className="text-sm text-[#E0E0E0] truncate">{url.fullUrl}</div>
+                            <div className="text-sm text-[#FAFAFA] truncate">{url.fullUrl}</div>
                         </div>
 
                         <div>
