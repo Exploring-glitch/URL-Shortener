@@ -36,14 +36,14 @@ const UserUrl = () => {
     if (isLoading) {
         return (
             <div className="flex justify-center my-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-[#A3A3A3]"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-muted"></div>
             </div>
         )
     }
 
     if (isError) {
         return (
-            <div className="border border-[#404040] text-[#FAFAFA] px-4 py-3 rounded-md my-4 text-sm">
+            <div className="border border-line bg-surface text-ink px-4 py-3 rounded-md my-4 text-sm">
                 Error loading your URLs: {error.message}
             </div>
         )
@@ -51,13 +51,13 @@ const UserUrl = () => {
 
     if (!data.urls || data.urls.length === 0) { //if user didn't create any short url
         return (
-            <div className="text-center text-[#FAFAFA] my-6 p-6 bg-[#111111] rounded-lg border border-[#262626]">
-                <svg className="w-12 h-12 mx-auto text-[#A3A3A3] mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <div className="text-center text-ink my-6 p-6 bg-field rounded-lg border border-line">
+                <svg className="w-12 h-12 mx-auto text-muted mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                 </svg>
                 <p className="text-lg font-medium">No URLs yet</p>
-                <p className="mt-1 text-sm text-[#A3A3A3]">
-                    Create your <span className="text-[#FAFAFA] underline underline-offset-4">first short URL</span> to get started.
+                <p className="mt-1 text-sm text-muted">
+                    Create your <span className="text-ink underline underline-offset-4">first short URL</span> to get started.
                 </p>
             </div>
         );
@@ -70,22 +70,22 @@ const UserUrl = () => {
         <div className="p-2 mt-5">
             {/* visible below lg */}
             <div className="space-y-4 block lg:hidden">
-                <h2 className="text-[#FAFAFA] text-lg font-medium mt-8 mb-4 text-center lg:text-left">
+                <h2 className="text-ink text-lg font-medium mt-8 mb-4 text-center lg:text-left">
                     Your generated URLs:
                 </h2>
 
                 {/* here we are using map func to take out a single url from urls object and naming it as 'url' */}
                 {data.urls.reverse().map((url) => (
-                    <div key={url._id} className="bg-[#111111] rounded-lg border border-[#262626] p-4 space-y-2">
+                    <div key={url._id} className="bg-field rounded-lg border border-line p-4 space-y-2">
                         <div>
-                            <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
+                            <span className="text-muted text-xs font-medium uppercase tracking-wide">
                                 Original URL:
                             </span>
-                            <div className="text-sm text-[#FAFAFA] truncate">{url.fullUrl}</div>
+                            <div className="text-sm text-ink truncate">{url.fullUrl}</div>
                         </div>
 
                         <div>
-                            <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
+                            <span className="text-muted text-xs font-medium uppercase tracking-wide">
                                 Short URL:
                             </span>
                             <div>
@@ -93,7 +93,7 @@ const UserUrl = () => {
                                     href={url.short_url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-[#FAFAFA] underline underline-offset-4 hover:text-[#D4D4D4] text-sm break-all"
+                                    className="text-ink underline underline-offset-4 hover:text-ink/80 text-sm break-all"
                                 >
                                     {url.short_url}
                                 </a>
@@ -101,10 +101,10 @@ const UserUrl = () => {
                         </div>
 
                         <div>
-                            <span className="text-[#A3A3A3] text-xs font-medium uppercase tracking-wide">
+                            <span className="text-muted text-xs font-medium uppercase tracking-wide">
                                 Clicks:
                             </span>
-                            <span className="px-2 ml-2 inline-flex text-xs leading-5 font-medium rounded border border-[#333333] bg-[#1A1A1A] text-[#FAFAFA]">
+                            <span className="px-2 ml-2 inline-flex text-xs leading-5 font-medium rounded border border-line bg-surface text-ink">
                                 {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
                             </span>
                         </div>
@@ -113,8 +113,8 @@ const UserUrl = () => {
                             <button
                                 onClick={() => handleCopy(url.short_url, url._id)}
                                 className={`mt-2 w-full inline-flex justify-center items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${copiedId === url._id
-                                    ? "bg-[#1A1A1A] text-[#FAFAFA] border border-[#404040]"
-                                    : "bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A]"
+                                    ? "bg-surface text-muted border border-line"
+                                    : "bg-field text-ink border border-line hover:bg-surface"
                                     } focus:outline-none`}
                             >
                                 {copiedId === url._id ? "Copied" : "Copy URL"}
@@ -122,7 +122,7 @@ const UserUrl = () => {
 
                             <button
                                 onClick={() => handleDelete(url._id)}
-                                className="mt-2 w-full inline-flex justify-center items-center px-3 py-2 border border-[#404040] text-[#FAFAFA] hover:bg-[#1A1A1A] text-sm font-medium rounded-md transition-colors duration-200"
+                                className="mt-2 w-full inline-flex justify-center items-center px-3 py-2 border border-line text-ink hover:bg-surface text-sm font-medium rounded-md transition-colors duration-200"
                             >
                                 Delete
                             </button>
@@ -132,30 +132,30 @@ const UserUrl = () => {
             </div>
 
             {/* visible from lg and above */}
-            <div className="hidden lg:block rounded-lg mt-5 overflow-hidden border border-[#262626]">
+            <div className="hidden lg:block rounded-lg mt-5 overflow-hidden border border-line">
                 <div className="overflow-x-auto h-56">
-                    <table className="min-w-full divide-y divide-[#262626]">
+                    <table className="min-w-full divide-y divide-line">
                         {/* thead: table head, tr: table row, th: table heading */}
-                        <thead className="bg-[#111111]">
+                        <thead className="bg-field">
                             <tr>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wide">
                                     Original URL
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wide">
                                     Short URL
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wide">
                                     Clicks
                                 </th>
-                                <th className="px-6 py-3 text-left text-xs font-medium text-[#A3A3A3] uppercase tracking-wide">
+                                <th className="px-6 py-3 text-left text-xs font-medium text-muted uppercase tracking-wide">
                                     Actions
                                 </th>
                             </tr>
                         </thead>
 
-                        <tbody className="divide-y divide-[#262626] text-[#FAFAFA]">
+                        <tbody className="divide-y divide-line text-ink">
                             {data.urls.map((url) => (
-                                <tr key={url._id} className="hover:bg-[#141414] transition-colors duration-150">
+                                <tr key={url._id} className="hover:bg-surface/60 transition-colors duration-150">
                                     <td className="px-6 py-4">
                                         <div className="text-sm truncate max-w-xs">{url.fullUrl}</div>
                                     </td>
@@ -165,14 +165,14 @@ const UserUrl = () => {
                                             href={url.short_url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="text-[#FAFAFA] underline underline-offset-4 hover:text-[#D4D4D4]"
+                                            className="text-ink underline underline-offset-4 hover:text-ink/80"
                                         >
                                             {url.short_url}
                                         </a>
                                     </td>
 
                                     <td className="px-2 py-2">
-                                        <span className="px-3 py-1 flex w-fit text-xs leading-5 font-medium rounded border border-[#333333] bg-[#1A1A1A] text-[#FAFAFA]">
+                                        <span className="px-3 py-1 flex w-fit text-xs leading-5 font-medium rounded border border-line bg-surface text-ink">
                                             {url.clicks} {url.clicks === 1 ? "click" : "clicks"}
                                         </span>
                                     </td>
@@ -181,8 +181,8 @@ const UserUrl = () => {
                                         <button
                                             onClick={() => handleCopy(url.short_url, url._id)}
                                             className={`inline-flex items-center px-4 py-2 text-xs font-medium rounded-md whitespace-nowrap shrink-0 transition-colors duration-200 ${copiedId === url._id
-                                                ? "bg-[#1A1A1A] text-[#FAFAFA] border border-[#404040]"
-                                                : "bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A]"
+                                                ? "bg-surface text-muted border border-line"
+                                                : "bg-field text-ink border border-line hover:bg-surface"
                                                 } focus:outline-none`}
                                         >
                                             {copiedId === url._id ? "Copied" : "Copy URL"}
@@ -190,7 +190,7 @@ const UserUrl = () => {
 
                                         <button
                                             onClick={() => handleDelete(url._id)}
-                                            className="flex items-center px-4 py-2 border border-[#404040] text-[#FAFAFA] hover:bg-[#1A1A1A] text-xs font-medium rounded-md whitespace-nowrap shrink-0 transition-colors duration-200"
+                                            className="flex items-center px-4 py-2 border border-line text-ink hover:bg-surface text-xs font-medium rounded-md whitespace-nowrap shrink-0 transition-colors duration-200"
                                         >
                                             Delete
                                         </button>
