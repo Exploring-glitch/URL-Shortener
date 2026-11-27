@@ -1,13 +1,16 @@
 import shortUrlModel from "../models/shortUrlSchema.js";
 import { ConflictError } from "../utils/errorHandler.js";
 
-export const saveShortUrlDao = async (url, shortUrl, full_short_url, userId) => {
+export const saveShortUrlDao = async (url, shortUrl, full_short_url, userId, publicUrl = null) => {
     try{
         const newUrl = new shortUrlModel({
             fullUrl: url,
             shortUrl: shortUrl,
             short_url: full_short_url
         })
+        if(publicUrl){
+            newUrl.publicUrl = publicUrl;
+        }
         if(userId){
             newUrl.user = userId;
         }

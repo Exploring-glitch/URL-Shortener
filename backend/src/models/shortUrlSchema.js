@@ -19,6 +19,10 @@ const shortUrlSchema = new mongoose.Schema({
         required: true,
     },
 
+    publicUrl: {
+        type: String,
+    },
+
     clicks: {
         type: Number, 
         default: 0, 

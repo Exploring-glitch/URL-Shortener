@@ -1,5 +1,6 @@
 import { checkCustomUrlDao, saveShortUrlDao } from "../dao/shortUrlDao.js";
 import { generateNanoid } from "../utils/helper.js";
+import { shortenWithIsGd } from "../utils/externalShortener.js";
 
 
 export const createShortUrlWithoutUserService = async (url, baseUrl) => { //takes url as input and convert it to short url
@@ -8,9 +9,11 @@ export const createShortUrlWithoutUserService = async (url, baseUrl) => { //take
 
     const full_short_url = baseUrl + shortUrl
 
-    await saveShortUrlDao(url, shortUrl, full_short_url, null); //calling the dao function to save the url to the database
+    const publicUrl = await shortenWithIsGd(full_short_url);
+
+    await saveShortUrlDao(url, shortUrl, full_short_url, null, publicUrl); //calling the dao function to save the url to the database
     
-    return (full_short_url);
+    return (publicUrl || full_short_url);
 }
 
 
@@ -24,8 +27,10 @@ export const createShortUrlWithUserService = async (url, userId, slug = null, ba
 
     const full_short_url = baseUrl + shortUrl
 
-    await saveShortUrlDao(url, shortUrl, full_short_url, userId);
+    const publicUrl = await shortenWithIsGd(full_short_url);
 
-    return (full_short_url);
+    await saveShortUrlDao(url, shortUrl, full_short_url, userId, publicUrl);
+
+    return (publicUrl || full_short_url);
 }
 
