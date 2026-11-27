@@ -27,15 +27,15 @@ export const NavBar = () => {
     }
 
     return (
-        <nav className="bg-[#0A0A0A] border-b border-[#262626] px-4 sm:px-6 py-4 flex justify-between items-center sticky top-0 z-50">
-            <h1 className="text-[#FAFAFA] text-base sm:text-lg font-medium tracking-tight">URL Shortener</h1>
+        <nav className="bg-page border-b border-line px-4 sm:px-6 py-4 flex justify-between items-center sticky top-0 z-50">
+            <h1 className="text-ink text-base sm:text-lg font-medium tracking-tight">URL Shortener</h1>
 
             <div className='flex gap-3'>
                 <div className="flex items-center">
                     {isAuthenticated ? (
-                        <button onClick={onLogout} className="border border-[#404040] text-[#FAFAFA] hover:bg-[#1A1A1A] px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm font-medium transition-colors duration-200" >Logout</button>
+                        <button onClick={onLogout} className="border border-line text-ink hover:bg-surface px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm font-medium transition-colors duration-200" >Logout</button>
                     ) : (
-                        <Link to="/auth" className="bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A] px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm font-medium transition-colors duration-200">Sign In</Link>)
+                        <Link to="/auth" className="bg-accent hover:bg-accent-strong text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-md text-sm font-medium transition-colors duration-200">Sign In</Link>)
                     }
                 </div>
             </div>
