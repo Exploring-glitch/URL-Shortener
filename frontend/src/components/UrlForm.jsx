@@ -9,13 +9,17 @@ const UrlForm = () => {
   const [copied, setCopied] = useState(false);
   const [customSlug, setCustomSlug] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const { isAuthenticated } = useSelector((state) => state.auth) //to take out data from the store. 
 
   const inputRef = useRef(null);
 
   const handleSubmit = async () => {
+    if (loading) return; // Ignore clicks while a URL is already being shortened
+
     setError('');
+    setLoading(true);
     inputRef.current.focus(); // Focus the input field when the button is clicked without an input
     try {
       const resultShortUrl = await getShortUrlFromBackend(url, customSlug) //to call the backend api
@@ -28,6 +32,8 @@ const UrlForm = () => {
 
     } catch (e) {
       setError(e.message)
+    } finally {
+      setLoading(false);
     }
   }
 
