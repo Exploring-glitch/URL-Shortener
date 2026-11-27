@@ -13,6 +13,8 @@ const UserUrl = () => {
     })
     const [copiedId, setCopiedId] = useState(null)
 
+    const displayUrl = (url) => url.publicUrl || url.short_url //is.gd link for new URLs, original link for older ones
+
     const handleCopy = (url, id) => {
         navigator.clipboard.writeText(url)
         setCopiedId(id)
@@ -90,12 +92,12 @@ const UserUrl = () => {
                             </span>
                             <div>
                                 <a
-                                    href={url.short_url}
+                                    href={displayUrl(url)}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-ink underline underline-offset-4 hover:text-ink/80 text-sm break-all"
                                 >
-                                    {url.short_url}
+                                    {displayUrl(url)}
                                 </a>
                             </div>
                         </div>
@@ -111,7 +113,7 @@ const UserUrl = () => {
 
                         <div>
                             <button
-                                onClick={() => handleCopy(url.short_url, url._id)}
+                                onClick={() => handleCopy(displayUrl(url), url._id)}
                                 className={`mt-2 w-full inline-flex justify-center items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${copiedId === url._id
                                     ? "bg-surface text-muted border border-line"
                                     : "bg-field text-ink border border-line hover:bg-surface"
@@ -162,12 +164,12 @@ const UserUrl = () => {
 
                                     <td className="px-6 py-4">
                                         <a
-                                            href={url.short_url}
+                                            href={displayUrl(url)}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="text-ink underline underline-offset-4 hover:text-ink/80"
                                         >
-                                            {url.short_url}
+                                            {displayUrl(url)}
                                         </a>
                                     </td>
 
@@ -179,7 +181,7 @@ const UserUrl = () => {
 
                                     <td className="px-6 py-4 h-full text-sm font-medium flex gap-2 items-center">
                                         <button
-                                            onClick={() => handleCopy(url.short_url, url._id)}
+                                            onClick={() => handleCopy(displayUrl(url), url._id)}
                                             className={`inline-flex items-center px-4 py-2 text-xs font-medium rounded-md whitespace-nowrap shrink-0 transition-colors duration-200 ${copiedId === url._id
                                                 ? "bg-surface text-muted border border-line"
                                                 : "bg-field text-ink border border-line hover:bg-surface"
