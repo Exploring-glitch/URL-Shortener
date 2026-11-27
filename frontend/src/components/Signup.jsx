@@ -47,13 +47,13 @@ const SignupUser = ({ state }) => {
             <h2 className="text-2xl font-semibold tracking-tight text-center mb-6">Create an Account</h2>
 
             {error && (
-                <div className="mb-4 p-3 border border-[#404040] text-[#FAFAFA] rounded-md text-sm">
+                <div className="mb-4 p-3 border border-line text-ink rounded-md text-sm">
                     {error}
                 </div>
             )}
 
             <div className="mb-4">
-                <label className="block text-sm text-[#A3A3A3] mb-2" htmlFor="name">
+                <label className="block text-sm text-muted mb-2" htmlFor="name">
                     Full Name
                 </label>
                 <input
@@ -62,12 +62,12 @@ const SignupUser = ({ state }) => {
                     id="name"
                     type="text"
                     placeholder="Your name"
-                    className="bg-[#111111] border border-[#333333] rounded-md w-full p-2.5 text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] text-sm"
+                    className="bg-field border border-line rounded-md w-full p-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-sm"
                 />
             </div>
 
             <div className="mb-4">
-                <label className="block text-sm text-[#A3A3A3] mb-2" htmlFor="email">
+                <label className="block text-sm text-muted mb-2" htmlFor="email">
                     Email
                 </label>
                 <input
@@ -76,12 +76,12 @@ const SignupUser = ({ state }) => {
                     id="email"
                     type="email"
                     placeholder="you@example.com"
-                    className="bg-[#111111] border border-[#333333] rounded-md w-full p-2.5 text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] text-sm"
+                    className="bg-field border border-line rounded-md w-full p-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-sm"
                 />
             </div>
 
             <div className="mb-4">
-                <label className="block text-sm text-[#A3A3A3] mb-2" htmlFor="password">
+                <label className="block text-sm text-muted mb-2" htmlFor="password">
                     Password
                 </label>
                 <input
@@ -91,7 +91,7 @@ const SignupUser = ({ state }) => {
                     id="password"
                     type="password"
                     placeholder="At least 6 characters"
-                    className="bg-[#111111] border border-[#333333] rounded-md w-full p-2.5 text-[#FAFAFA] placeholder:text-[#666666] focus:outline-none focus:ring-1 focus:ring-[#FAFAFA] focus:border-[#FAFAFA] text-sm"
+                    className="bg-field border border-line rounded-md w-full p-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-sm"
                     minLength={6}
                     required
                 />
@@ -101,16 +101,16 @@ const SignupUser = ({ state }) => {
                 <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    className="bg-[#FAFAFA] hover:bg-[#D4D4D4] text-[#0A0A0A] transition-colors duration-200 font-medium text-sm py-2.5 px-4 rounded-md focus:outline-none disabled:opacity-50 w-full"
+                    className="bg-accent hover:bg-accent-strong text-white transition-colors duration-200 font-medium text-sm py-2.5 px-4 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong disabled:opacity-50 w-full"
                 >
                     {loading ? 'Creating...' : 'Create Account'}
                 </button>
             </div>
 
             <div className="text-center mt-4">
-                <p className="text-sm text-[#A3A3A3]">
+                <p className="text-sm text-muted">
                     Already have an account?{' '}
-                    <span onClick={() => state(true)} className="cursor-pointer text-[#FAFAFA] underline underline-offset-4 hover:text-[#D4D4D4] transition-colors">Sign In</span>
+                    <span onClick={() => state(true)} className="cursor-pointer text-ink underline underline-offset-4 hover:text-ink/80 transition-colors">Sign In</span>
                 </p>
             </div>
         </div>
