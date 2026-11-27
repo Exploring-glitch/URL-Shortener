@@ -91,7 +91,15 @@ const UrlForm = () => {
 
       <button
         onClick={handleSubmit}
-        className='w-full mt-2 bg-accent hover:bg-accent-strong text-white p-2.5 rounded-md font-medium text-sm transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong'>Shorten URL
+        disabled={loading}
+        aria-busy={loading}
+        className='w-full mt-2 inline-flex items-center justify-center gap-2 bg-accent enabled:hover:bg-accent-strong text-white p-2.5 rounded-md font-medium text-sm transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong disabled:cursor-not-allowed disabled:opacity-80'>
+        {loading ? (
+          <>
+            <span className="h-4 w-4 animate-spin rounded-full border-2 border-white/40 border-t-white" aria-hidden="true" />
+            Shortening...
+          </>
+        ) : 'Shorten URL'}
       </button>
 
       {shortUrl && (    //This div is shown only if shortUrl is prsent
