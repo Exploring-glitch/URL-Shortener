@@ -71,49 +71,75 @@ const SignupUser = ({ state }) => {
                 </div>
             )}
 
-            <div className="mb-4">
-                <label className="block text-sm text-muted mb-2" htmlFor="name">
-                    Full Name
-                </label>
-                <input
-                    value={name}
-                    onInput={(c) => { setName(c.target.value) }}
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    className="bg-field border border-line rounded-md w-full p-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-sm"
-                />
-            </div>
+            <div className="space-y-5">
+                <div>
+                    <label className="mb-2 block text-sm text-muted" htmlFor="name">
+                        Full Name
+                    </label>
+                    <div className="relative">
+                        <span className="pointer-events-none absolute inset-y-0 left-0 grid w-11 place-items-center text-muted/70" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" className="size-4">
+                                <circle cx="12" cy="8" r="3.5" />
+                                <path d="M5.5 19c0-3.2 2.9-5.5 6.5-5.5s6.5 2.3 6.5 5.5" />
+                            </svg>
+                        </span>
+                        <input
+                            value={name}
+                            onInput={(c) => { setName(c.target.value) }}
+                            id="name"
+                            type="text"
+                            placeholder="Your name"
+                            className="bg-field border border-line rounded-lg w-full py-3 pr-3 pl-11 text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors text-sm"
+                        />
+                    </div>
+                </div>
 
-            <div className="mb-4">
-                <label className="block text-sm text-muted mb-2" htmlFor="email">
-                    Email
-                </label>
-                <input
-                    value={email}
-                    onInput={(c) => { setEmail(c.target.value) }}
-                    id="email"
-                    type="email"
-                    placeholder="you@example.com"
-                    className="bg-field border border-line rounded-md w-full p-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-sm"
-                />
-            </div>
+                <div>
+                    <label className="mb-2 block text-sm text-muted" htmlFor="email">
+                        Email
+                    </label>
+                    <div className="relative">
+                        <span className="pointer-events-none absolute inset-y-0 left-0 grid w-11 place-items-center text-muted/70" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" className="size-4">
+                                <rect x="3.5" y="5.5" width="17" height="13" rx="2" />
+                                <path d="M4 7l8 6 8-6" />
+                            </svg>
+                        </span>
+                        <input
+                            value={email}
+                            onInput={(c) => { setEmail(c.target.value) }}
+                            id="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            className="bg-field border border-line rounded-lg w-full py-3 pr-3 pl-11 text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors text-sm"
+                        />
+                    </div>
+                </div>
 
-            <div className="mb-4">
-                <label className="block text-sm text-muted mb-2" htmlFor="password">
-                    Password
-                </label>
-                <input
-                    value={password}
-                    onInput={(c) => { setPassword(c.target.value) }}
-
-                    id="password"
-                    type="password"
-                    placeholder="At least 6 characters"
-                    className="bg-field border border-line rounded-md w-full p-2.5 text-ink placeholder:text-muted/70 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent text-sm"
-                    minLength={6}
-                    required
-                />
+                <div>
+                    <label className="mb-2 block text-sm text-muted" htmlFor="password">
+                        Password
+                    </label>
+                    <div className="relative">
+                        <span className="pointer-events-none absolute inset-y-0 left-0 grid w-11 place-items-center text-muted/70" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" className="size-4">
+                                <rect x="6" y="10" width="12" height="9" rx="2" />
+                                <path d="M9 10V7.5a3 3 0 0 1 6 0V10" />
+                            </svg>
+                        </span>
+                        <input
+                            value={password}
+                            onInput={(c) => { setPassword(c.target.value) }}
+                            id="password"
+                            type="password"
+                            placeholder="At least 6 characters"
+                            className="bg-field border border-line rounded-lg w-full py-3 pr-3 pl-11 text-ink placeholder:text-muted/60 focus:outline-none focus:ring-2 focus:ring-accent/30 focus:border-accent transition-colors text-sm"
+                            minLength={6}
+                            required
+                        />
+                    </div>
+                    <p className="mt-2 pl-1 text-xs text-muted/70">Use at least 6 characters.</p>
+                </div>
             </div>
 
             <div className="flex items-center justify-between">
