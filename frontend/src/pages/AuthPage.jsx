@@ -43,7 +43,7 @@ const UserAuthPage = () => {
   return (
     <div className="min-h-screen bg-page text-ink">
       <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col lg:flex-row">
-        <aside className="relative hidden lg:flex lg:w-[46%] shrink-0 flex-col justify-between overflow-hidden border-r border-line bg-surface px-10 py-12 xl:px-14">
+        <aside className="auth-rise relative hidden lg:flex lg:w-[46%] shrink-0 flex-col justify-between overflow-hidden border-r border-line bg-surface px-10 py-12 xl:px-14">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
@@ -117,7 +117,7 @@ const UserAuthPage = () => {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-line bg-surface p-6 shadow-[0_24px_70px_-36px_rgba(0,0,0,0.85)] sm:p-8">
+          <div className="auth-rise relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-line bg-surface p-6 shadow-[0_24px_70px_-36px_rgba(0,0,0,0.85)] sm:p-8">
             <div
               aria-hidden="true"
               className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-strong/70 to-transparent"
