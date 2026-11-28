@@ -125,20 +125,24 @@ const LoginUser = ({state}) => {
         </div>
       </div>
 
-      <div className="flex items-center justify-between">
-        <button
-          onClick={handleSubmit}
-          disabled={loading}
-          className="bg-accent hover:bg-accent-strong text-white transition-colors duration-200 font-medium text-sm py-2.5 px-4 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong disabled:opacity-50 w-full"
-        >
-          {loading ? 'Signing in...' : 'Sign In'}
-        </button>
+      <button
+        onClick={handleSubmit}
+        disabled={loading}
+        className="mt-7 w-full rounded-lg bg-gradient-to-r from-accent to-accent-strong py-3 text-sm font-semibold text-white shadow-lg shadow-accent/20 transition-[filter,transform] duration-200 hover:brightness-110 active:scale-[0.99] focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 focus-visible:ring-offset-surface disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:brightness-100"
+      >
+        {loading ? 'Signing in...' : 'Sign In'}
+      </button>
+
+      <div className="mt-7 flex items-center gap-3">
+        <span className="h-px flex-1 bg-line" aria-hidden="true" />
+        <span className="text-[11px] uppercase tracking-[0.16em] text-muted/70">or</span>
+        <span className="h-px flex-1 bg-line" aria-hidden="true" />
       </div>
 
-      <div className="text-center mt-4">
+      <div className="mt-5 rounded-lg border border-line bg-field/60 px-4 py-3 text-center">
         <p className="text-sm text-muted">
           Don't have an account?{' '}
-          <span onClick={() => state(false)} className="cursor-pointer text-ink underline underline-offset-4 hover:text-ink/80 transition-colors">Sign Up</span>
+          <span onClick={() => state(false)} className="cursor-pointer font-medium text-accent-strong underline underline-offset-4 transition-colors hover:text-ink">Sign Up</span>
         </p>
       </div>
     </div>
