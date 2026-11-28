@@ -44,7 +44,26 @@ const SignupUser = ({ state }) => {
 
     return (
         <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-center mb-6">Create an Account</h2>
+            <div className="mb-7">
+                <span className="mb-4 grid size-11 place-items-center rounded-xl border border-line bg-field text-accent-strong">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.7"
+                        strokeLinecap="round"
+                        className="size-5"
+                        aria-hidden="true"
+                    >
+                        <circle cx="11" cy="8" r="3.5" />
+                        <path d="M4.5 19c0-3.2 2.9-5.5 6.5-5.5 1.2 0 2.3.2 3.2.7" />
+                        <path d="M18 14.5v5m-2.5-2.5h5" />
+                    </svg>
+                </span>
+                <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-accent-strong">Get started</p>
+                <h2 className="text-2xl font-semibold tracking-tight text-ink">Create an Account</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted">One step and your links have a home.</p>
+            </div>
 
             {error && (
                 <div className="mb-4 p-3 border border-line text-ink rounded-md text-sm">
