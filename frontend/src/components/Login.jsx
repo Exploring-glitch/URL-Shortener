@@ -62,8 +62,20 @@ const LoginUser = ({state}) => {
       </div>
 
       {error && (
-        <div className="mb-4 p-3 border border-line text-ink rounded-md text-sm">
-            {error}
+        <div className="mb-6 flex items-start gap-3 rounded-lg border border-danger/40 bg-danger/10 p-3 text-sm text-ink">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            className="mt-0.5 size-4 shrink-0 text-danger"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 8v4.5M12 16h.01" />
+          </svg>
+          <span className="leading-relaxed">{error}</span>
         </div>
       )}
 
