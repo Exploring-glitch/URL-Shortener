@@ -110,14 +110,22 @@ const UserAuthPage = () => {
         </aside>
 
         <main className="flex flex-1 flex-col justify-center px-4 py-10 sm:px-8 sm:py-14 lg:px-12">
-          <div className="mb-7 flex items-center gap-3 lg:hidden">
-            <BrandMark />
-            <span className="text-sm font-medium tracking-tight">URL Shortener</span>
+          <div className="mx-auto mb-7 w-full max-w-md lg:hidden">
+            <div className="flex items-center gap-3">
+              <BrandMark />
+              <span className="text-sm font-medium tracking-tight">URL Shortener</span>
+            </div>
           </div>
 
-          <div className="mx-auto w-full max-w-md rounded-xl border border-line bg-surface p-6 sm:p-8">
+          <div className="relative mx-auto w-full max-w-md overflow-hidden rounded-2xl border border-line bg-surface p-6 shadow-[0_24px_70px_-36px_rgba(0,0,0,0.85)] sm:p-8">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent-strong/70 to-transparent"
+            />
             {login ? <LoginUser state={setLogin} /> : <SignupUser state={setLogin} />}
           </div>
+
+          <p className="mx-auto mt-6 text-center text-xs text-muted/70">Simple links. No noise.</p>
         </main>
       </div>
     </div>
