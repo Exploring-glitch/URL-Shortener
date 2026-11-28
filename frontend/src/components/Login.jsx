@@ -40,7 +40,26 @@ const LoginUser = ({state}) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold tracking-tight text-center mb-6">Sign In</h2>
+      <div className="mb-7">
+        <span className="mb-4 grid size-11 place-items-center rounded-xl border border-line bg-field text-accent-strong">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.7"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="size-5"
+            aria-hidden="true"
+          >
+            <rect x="6" y="10" width="12" height="9" rx="2" />
+            <path d="M9 10V7.5a3 3 0 0 1 6 0V10" />
+          </svg>
+        </span>
+        <p className="mb-2 text-[11px] font-medium uppercase tracking-[0.18em] text-accent-strong">Welcome back</p>
+        <h2 className="text-2xl font-semibold tracking-tight text-ink">Sign In</h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted">Pick up where you left off. Your links are waiting.</p>
+      </div>
 
       {error && (
         <div className="mb-4 p-3 border border-line text-ink rounded-md text-sm">
